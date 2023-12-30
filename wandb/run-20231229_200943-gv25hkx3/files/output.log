@@ -1,0 +1,49 @@
+12/29/2023 20:09:43 - INFO - __main__ - ***** Running training *****
+12/29/2023 20:09:43 - INFO - __main__ -   Num examples = 14732
+12/29/2023 20:09:43 - INFO - __main__ -   Num Epochs = 5
+12/29/2023 20:09:43 - INFO - __main__ -   Instantaneous batch size per device = 4
+12/29/2023 20:09:43 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 16
+12/29/2023 20:09:43 - INFO - __main__ -   Gradient Accumulation steps = 4
+12/29/2023 20:09:43 - INFO - __main__ -   Total optimization steps = 4605
+  0%|                                                                                                                                             | 0/4605 [00:00<?, ?it/s]12/29/2023 20:09:45 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_0
+12/29/2023 20:09:53 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_0/model.safetensors
+12/29/2023 20:09:53 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_0/optimizer.bin
+12/29/2023 20:09:53 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_0/scheduler.bin
+12/29/2023 20:09:53 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_0/sampler.bin
+12/29/2023 20:09:53 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_0/sampler_1.bin
+12/29/2023 20:09:53 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_0/random_states_0.pkl
+tokenizer config file saved in exp_results/test/tokenizer_config.json
+Special tokens file saved in exp_results/test/special_tokens_map.json
+12/29/2023 20:09:55 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_0
+12/29/2023 20:10:10 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_0/model.safetensors
+12/29/2023 20:10:10 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_0/optimizer.bin
+12/29/2023 20:10:10 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_0/scheduler.bin
+12/29/2023 20:10:10 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_0/sampler.bin
+12/29/2023 20:10:10 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_0/sampler_1.bin
+12/29/2023 20:10:10 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_0/random_states_0.pkl
+tokenizer config file saved in exp_results/test/tokenizer_config.json
+Special tokens file saved in exp_results/test/special_tokens_map.json
+12/29/2023 20:10:20 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_0
+12/29/2023 20:10:33 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_0/model.safetensors
+12/29/2023 20:10:33 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_0/optimizer.bin
+12/29/2023 20:10:33 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_0/scheduler.bin
+12/29/2023 20:10:33 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_0/sampler.bin
+12/29/2023 20:10:33 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_0/sampler_1.bin
+12/29/2023 20:10:33 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_0/random_states_0.pkl
+tokenizer config file saved in exp_results/test/tokenizer_config.json
+Special tokens file saved in exp_results/test/special_tokens_map.json
+  0%|                                                                                                                                  | 1/4605 [00:54<69:29:39, 54.34s/it]12/29/2023 20:10:38 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_1
+Traceback (most recent call last):
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 926, in <module>
+    main()
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 743, in main
+    accelerator.save_state(output_dir)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/accelerator.py", line 2708, in save_state
+    save_location = save_accelerator_state(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/checkpointing.py", line 99, in save_accelerator_state
+    save(state, output_model_file, save_on_each_node=save_on_each_node, safe_serialization=safe_serialization)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/utils/other.py", line 181, in save
+    save_func(obj, f)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/safetensors/torch.py", line 281, in save_file
+    serialize_file(_flatten(tensors), filename, metadata=metadata)
+KeyboardInterrupt

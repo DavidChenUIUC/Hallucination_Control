@@ -1,0 +1,27 @@
+12/29/2023 10:05:49 - INFO - __main__ - ***** Running training *****
+12/29/2023 10:05:49 - INFO - __main__ -   Num examples = 14732
+12/29/2023 10:05:49 - INFO - __main__ -   Num Epochs = 5
+12/29/2023 10:05:49 - INFO - __main__ -   Instantaneous batch size per device = 4
+12/29/2023 10:05:49 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 16
+12/29/2023 10:05:49 - INFO - __main__ -   Gradient Accumulation steps = 4
+12/29/2023 10:05:49 - INFO - __main__ -   Total optimization steps = 4605
+
+  0%|                                                                                                                                             | 0/4605 [00:00<?, ?it/s]12/29/2023 10:05:51 - INFO - accelerate.accelerator - Saving current state to exp_results/high_lr_linear_decay/step_0
+12/29/2023 10:06:03 - INFO - accelerate.checkpointing - Model weights saved in exp_results/high_lr_linear_decay/step_0/model.safetensors
+12/29/2023 10:06:03 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/high_lr_linear_decay/step_0/optimizer.bin
+12/29/2023 10:06:03 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/high_lr_linear_decay/step_0/scheduler.bin
+12/29/2023 10:06:03 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/high_lr_linear_decay/step_0/sampler.bin
+12/29/2023 10:06:03 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/high_lr_linear_decay/step_0/sampler_1.bin
+12/29/2023 10:06:03 - INFO - accelerate.checkpointing - Random states saved in exp_results/high_lr_linear_decay/step_0/random_states_0.pkl
+Traceback (most recent call last):██████████████████████████████████████████████████████████████████████████████▏                       | 164/205 [00:00<00:00, 817.42it/s]
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 914, in <module>
+    main()
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 802, in main
+    accuracy = compute_accuracy(ans_pred_list, ans_gold_list)
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 895, in compute_accuracy
+    return acc / len(pred)
+ZeroDivisionError: float division by zero
+|- Printing evaluation prediction
+[]
+|- Printing evaluation ground truth
+[]

@@ -1,0 +1,31 @@
+|- Resuming from checkpoint
+Resumed from checkpoint: ./exp_results/test/step_0 path step_0
+12/29/2023 20:39:56 - INFO - __main__ - ***** Running training *****
+12/29/2023 20:39:56 - INFO - __main__ -   Num examples = 14732
+12/29/2023 20:39:56 - INFO - __main__ -   Num Epochs = 5
+12/29/2023 20:39:56 - INFO - __main__ -   Instantaneous batch size per device = 4
+12/29/2023 20:39:56 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 16
+12/29/2023 20:39:56 - INFO - __main__ -   Gradient Accumulation steps = 4
+12/29/2023 20:39:56 - INFO - __main__ -   Total optimization steps = 4605
+  0%|                                                                                                                                             | 0/4605 [00:00<?, ?it/s]12/29/2023 20:39:56 - INFO - accelerate.accelerator - Loading states from ./exp_results/test/step_0
+12/29/2023 20:39:57 - INFO - accelerate.checkpointing - All model weights loaded successfully
+12/29/2023 20:39:57 - INFO - accelerate.checkpointing - All optimizer states loaded successfully
+12/29/2023 20:39:57 - INFO - accelerate.checkpointing - All scheduler states loaded successfully
+12/29/2023 20:39:57 - INFO - accelerate.checkpointing - All dataloader sampler states loaded successfully
+12/29/2023 20:39:57 - INFO - accelerate.checkpointing - All random states loaded successfully
+12/29/2023 20:39:57 - INFO - accelerate.accelerator - Loading in 0 custom states
+Evaluating:   0%|                                                                                                                                  | 0/205 [00:00<?, ?it/s]
+Traceback (most recent call last):                                                                                                                 | 0/205 [00:00<?, ?it/s]
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 953, in <module>
+    main()
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 800, in main
+    print('|- inputs ', tokenizer.batch_decode(gen_kwargs, skip_special_tokens=True))
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 3710, in batch_decode
+    return [
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 3711, in <listcomp>
+    self.decode(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 3750, in decode
+    return self._decode(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/tokenization_utils_fast.py", line 625, in _decode
+    text = self._tokenizer.decode(token_ids, skip_special_tokens=skip_special_tokens)
+TypeError: argument 'ids': Can't extract `str` to `Vec`

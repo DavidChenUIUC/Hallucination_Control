@@ -1,0 +1,220 @@
+12/29/2023 21:50:14 - INFO - __main__ - ***** Running training *****
+12/29/2023 21:50:14 - INFO - __main__ -   Num examples = 14732
+12/29/2023 21:50:14 - INFO - __main__ -   Num Epochs = 5
+12/29/2023 21:50:14 - INFO - __main__ -   Instantaneous batch size per device = 4
+12/29/2023 21:50:14 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 16
+12/29/2023 21:50:14 - INFO - __main__ -   Gradient Accumulation steps = 4
+12/29/2023 21:50:14 - INFO - __main__ -   Total optimization steps = 4605
+  0%|                                                                                                                                             | 0/4605 [00:00<?, ?it/s]12/29/2023 21:50:15 - INFO - accelerate.accelerator - Saving current state to exp_results/no_prompt_lr8e-5_decay0.1/step_0
+12/29/2023 21:50:28 - INFO - accelerate.checkpointing - Model weights saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/model.safetensors
+12/29/2023 21:50:28 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/optimizer.bin
+12/29/2023 21:50:28 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/scheduler.bin
+12/29/2023 21:50:28 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/sampler.bin
+12/29/2023 21:50:28 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/sampler_1.bin
+12/29/2023 21:50:28 - INFO - accelerate.checkpointing - Random states saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/random_states_0.pkl
+tokenizer config file saved in exp_results/no_prompt_lr8e-5_decay0.1/tokenizer_config.json
+Special tokens file saved in exp_results/no_prompt_lr8e-5_decay0.1/special_tokens_map.json
+12/29/2023 21:50:30 - INFO - accelerate.accelerator - Saving current state to exp_results/no_prompt_lr8e-5_decay0.1/step_0
+12/29/2023 21:50:42 - INFO - accelerate.checkpointing - Model weights saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/model.safetensors
+12/29/2023 21:50:42 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/optimizer.bin
+12/29/2023 21:50:42 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/scheduler.bin
+12/29/2023 21:50:42 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/sampler.bin
+12/29/2023 21:50:42 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/sampler_1.bin
+12/29/2023 21:50:42 - INFO - accelerate.checkpointing - Random states saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/random_states_0.pkl
+tokenizer config file saved in exp_results/no_prompt_lr8e-5_decay0.1/tokenizer_config.json
+Special tokens file saved in exp_results/no_prompt_lr8e-5_decay0.1/special_tokens_map.json
+12/29/2023 21:50:44 - INFO - accelerate.accelerator - Saving current state to exp_results/no_prompt_lr8e-5_decay0.1/step_0
+12/29/2023 21:51:00 - INFO - accelerate.checkpointing - Model weights saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/model.safetensors
+12/29/2023 21:51:00 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/optimizer.bin
+12/29/2023 21:51:00 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/scheduler.bin
+12/29/2023 21:51:00 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/sampler.bin
+12/29/2023 21:51:00 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/sampler_1.bin
+12/29/2023 21:51:00 - INFO - accelerate.checkpointing - Random states saved in exp_results/no_prompt_lr8e-5_decay0.1/step_0/random_states_0.pkl
+tokenizer config file saved in exp_results/no_prompt_lr8e-5_decay0.1/tokenizer_config.json
+Special tokens file saved in exp_results/no_prompt_lr8e-5_decay0.1/special_tokens_map.json
+  0%|                                                                                                                                  | 1/4605 [00:47<60:49:13, 47.56s/it]
+Epoch: 0 | Step: 1 | Loss: 21.24486541748047
+Epoch: 0 | Step: 1 | Loss: 19.253273010253906
+
+  0%|                                                                                                                                  | 2/4605 [00:50<26:57:20, 21.08s/it]
+Epoch: 0 | Step: 1 | Loss: 20.37052345275879
+Epoch: 0 | Step: 2 | Loss: 20.163272857666016
+
+  0%|                                                                                                                                  | 3/4605 [00:52<16:05:24, 12.59s/it]
+Epoch: 0 | Step: 2 | Loss: 21.06698989868164
+Epoch: 0 | Step: 2 | Loss: 21.861881256103516
+
+  0%|                                                                                                                                  | 4/4605 [00:55<10:59:14,  8.60s/it]
+Epoch: 0 | Step: 3 | Loss: 19.01921844482422
+Epoch: 0 | Step: 3 | Loss: 19.138105392456055
+Epoch: 0 | Step: 3 | Loss: 20.55335807800293
+
+  0%|▏                                                                                                                                  | 5/4605 [00:57<8:10:04,  6.39s/it]
+Epoch: 0 | Step: 4 | Loss: 19.763757705688477
+Epoch: 0 | Step: 4 | Loss: 20.2375545501709
+Epoch: 0 | Step: 4 | Loss: 21.224164962768555
+Epoch: 0 | Step: 5 | Loss: 20.497417449951172
+Epoch: 0 | Step: 5 | Loss: 20.35588836669922
+
+  0%|▏                                                                                                                                  | 6/4605 [01:00<6:28:04,  5.06s/it]
+Epoch: 0 | Step: 5 | Loss: 19.8140926361084
+Epoch: 0 | Step: 6 | Loss: 20.401121139526367
+
+  0%|▏                                                                                                                                  | 7/4605 [01:02<5:23:25,  4.22s/it]
+Epoch: 0 | Step: 6 | Loss: 20.070714950561523
+Epoch: 0 | Step: 6 | Loss: 21.876052856445312
+Epoch: 0 | Step: 7 | Loss: 20.018640518188477
+
+  0%|▏                                                                                                                                  | 8/4605 [01:05<4:41:21,  3.67s/it]
+Epoch: 0 | Step: 7 | Loss: 20.519306182861328
+Epoch: 0 | Step: 7 | Loss: 22.29330825805664
+
+  0%|▎                                                                                                                                  | 9/4605 [01:07<4:13:12,  3.31s/it]
+Epoch: 0 | Step: 8 | Loss: 20.292165756225586
+Epoch: 0 | Step: 8 | Loss: 21.007360458374023
+Epoch: 0 | Step: 8 | Loss: 21.4204158782959
+Epoch: 0 | Step: 9 | Loss: 20.43679428100586
+Epoch: 0 | Step: 9 | Loss: 20.543540954589844
+
+  0%|▎                                                                                                                                 | 10/4605 [01:10<3:53:59,  3.06s/it]
+Epoch: 0 | Step: 9 | Loss: 20.287254333496094
+Epoch: 0 | Step: 10 | Loss: 19.784727096557617
+
+  0%|▎                                                                                                                                 | 11/4605 [01:12<3:40:55,  2.89s/it]
+Epoch: 0 | Step: 10 | Loss: 20.551015853881836
+Epoch: 0 | Step: 10 | Loss: 20.947425842285156
+
+  0%|▎                                                                                                                                 | 12/4605 [01:15<3:32:56,  2.78s/it]
+Epoch: 0 | Step: 11 | Loss: 20.048038482666016
+Epoch: 0 | Step: 11 | Loss: 20.35683822631836
+Epoch: 0 | Step: 11 | Loss: 20.281265258789062
+
+  0%|▎                                                                                                                                 | 13/4605 [01:17<3:26:26,  2.70s/it]
+Epoch: 0 | Step: 12 | Loss: 20.603103637695312
+Epoch: 0 | Step: 12 | Loss: 20.665515899658203
+Epoch: 0 | Step: 12 | Loss: 18.22116470336914
+Epoch: 0 | Step: 13 | Loss: 18.745174407958984
+Epoch: 0 | Step: 13 | Loss: 20.244619369506836
+
+  0%|▍                                                                                                                                 | 14/4605 [01:20<3:21:56,  2.64s/it]
+Epoch: 0 | Step: 13 | Loss: 21.545028686523438
+Epoch: 0 | Step: 14 | Loss: 20.572437286376953
+
+  0%|▍                                                                                                                                 | 15/4605 [01:22<3:18:50,  2.60s/it]
+Epoch: 0 | Step: 14 | Loss: 17.719823837280273
+Epoch: 0 | Step: 14 | Loss: 19.449079513549805
+
+  0%|▍                                                                                                                                 | 16/4605 [01:25<3:16:39,  2.57s/it]
+Epoch: 0 | Step: 15 | Loss: 20.656455993652344
+Epoch: 0 | Step: 15 | Loss: 20.77657127380371
+Epoch: 0 | Step: 15 | Loss: 19.898305892944336
+
+  0%|▍                                                                                                                                 | 17/4605 [01:27<3:15:20,  2.55s/it]
+Epoch: 0 | Step: 16 | Loss: 21.405309677124023
+Epoch: 0 | Step: 16 | Loss: 19.80558204650879
+Epoch: 0 | Step: 16 | Loss: 20.272485733032227
+Epoch: 0 | Step: 17 | Loss: 21.071210861206055
+Epoch: 0 | Step: 17 | Loss: 21.78743553161621
+
+  0%|▌                                                                                                                                 | 18/4605 [01:30<3:14:23,  2.54s/it]
+Epoch: 0 | Step: 17 | Loss: 21.271339416503906
+Epoch: 0 | Step: 18 | Loss: 19.477859497070312
+
+  0%|▌                                                                                                                                 | 19/4605 [01:32<3:13:49,  2.54s/it]
+Epoch: 0 | Step: 18 | Loss: 19.013683319091797
+Epoch: 0 | Step: 18 | Loss: 20.852001190185547
+
+  0%|▌                                                                                                                                 | 20/4605 [01:35<3:13:16,  2.53s/it]
+Epoch: 0 | Step: 19 | Loss: 20.608922958374023
+Epoch: 0 | Step: 19 | Loss: 20.112096786499023
+Epoch: 0 | Step: 19 | Loss: 19.545804977416992
+
+  0%|▌                                                                                                                                 | 21/4605 [01:37<3:12:51,  2.52s/it]
+Epoch: 0 | Step: 20 | Loss: 18.290699005126953
+Epoch: 0 | Step: 20 | Loss: 20.72684097290039
+Epoch: 0 | Step: 20 | Loss: 21.34535026550293
+Epoch: 0 | Step: 21 | Loss: 20.251422882080078
+Epoch: 0 | Step: 21 | Loss: 20.289518356323242
+
+  0%|▌                                                                                                                                 | 22/4605 [01:40<3:12:35,  2.52s/it]
+Epoch: 0 | Step: 21 | Loss: 18.97137451171875
+Epoch: 0 | Step: 22 | Loss: 20.23587989807129
+
+  0%|▋                                                                                                                                 | 23/4605 [01:42<3:12:28,  2.52s/it]
+Epoch: 0 | Step: 22 | Loss: 21.120676040649414
+Epoch: 0 | Step: 22 | Loss: 20.712589263916016
+
+  1%|▋                                                                                                                                 | 24/4605 [01:45<3:12:22,  2.52s/it]
+Epoch: 0 | Step: 23 | Loss: 21.69169807434082
+Epoch: 0 | Step: 23 | Loss: 19.84751319885254
+Epoch: 0 | Step: 23 | Loss: 19.77506446838379
+
+  1%|▋                                                                                                                                 | 25/4605 [01:47<3:12:12,  2.52s/it]
+Epoch: 0 | Step: 24 | Loss: 20.860475540161133
+Epoch: 0 | Step: 24 | Loss: 19.543025970458984
+Epoch: 0 | Step: 24 | Loss: 21.533613204956055
+Epoch: 0 | Step: 25 | Loss: 19.86773681640625
+Epoch: 0 | Step: 25 | Loss: 19.590015411376953
+
+  1%|▋                                                                                                                                 | 26/4605 [01:50<3:12:06,  2.52s/it]
+Epoch: 0 | Step: 25 | Loss: 21.42802619934082
+Epoch: 0 | Step: 26 | Loss: 18.767061233520508
+
+  1%|▊                                                                                                                                 | 27/4605 [01:52<3:12:03,  2.52s/it]
+Epoch: 0 | Step: 26 | Loss: 20.296634674072266
+Epoch: 0 | Step: 26 | Loss: 20.240110397338867
+
+  1%|▊                                                                                                                                 | 28/4605 [01:55<3:11:59,  2.52s/it]
+Epoch: 0 | Step: 27 | Loss: 20.169692993164062
+Epoch: 0 | Step: 27 | Loss: 21.10968017578125
+
+  1%|▊                                                                                                                                 | 29/4605 [01:57<3:11:58,  2.52s/it]
+Epoch: 0 | Step: 28 | Loss: 19.759754180908203
+Epoch: 0 | Step: 28 | Loss: 19.081010818481445
+Epoch: 0 | Step: 28 | Loss: 19.914657592773438
+Epoch: 0 | Step: 28 | Loss: 20.903533935546875
+Epoch: 0 | Step: 29 | Loss: 19.1508731842041
+Epoch: 0 | Step: 29 | Loss: 19.35688591003418
+
+  1%|▊                                                                                                                                 | 30/4605 [02:00<3:11:58,  2.52s/it]
+Epoch: 0 | Step: 29 | Loss: 19.68115997314453
+Epoch: 0 | Step: 30 | Loss: 19.981821060180664
+
+  1%|▉                                                                                                                                 | 31/4605 [02:02<3:12:05,  2.52s/it]
+Epoch: 0 | Step: 30 | Loss: 21.081754684448242
+Epoch: 0 | Step: 30 | Loss: 18.781471252441406
+
+  1%|▉                                                                                                                                 | 32/4605 [02:05<3:12:08,  2.52s/it]
+Epoch: 0 | Step: 31 | Loss: 19.642995834350586
+Epoch: 0 | Step: 31 | Loss: 18.524396896362305
+Epoch: 0 | Step: 31 | Loss: 19.231136322021484
+Epoch: 0 | Step: 32 | Loss: 19.264257431030273
+Epoch: 0 | Step: 32 | Loss: 19.738161087036133
+Epoch: 0 | Step: 32 | Loss: 20.888164520263672
+
+  1%|▉                                                                                                                                 | 33/4605 [02:07<3:12:05,  2.52s/it]
+Epoch: 0 | Step: 33 | Loss: 19.374025344848633
+Epoch: 0 | Step: 33 | Loss: 19.308866500854492
+
+  1%|▉                                                                                                                                 | 34/4605 [02:10<3:12:08,  2.52s/it]
+Epoch: 0 | Step: 33 | Loss: 18.562179565429688
+Epoch: 0 | Step: 34 | Loss: 20.045753479003906
+
+  1%|▉                                                                                                                                 | 35/4605 [02:12<3:12:09,  2.52s/it]
+Epoch: 0 | Step: 34 | Loss: 18.114356994628906
+Epoch: 0 | Step: 34 | Loss: 18.501476287841797
+
+  1%|█                                                                                                                                 | 36/4605 [02:15<3:12:09,  2.52s/it]
+Epoch: 0 | Step: 35 | Loss: 18.731849670410156
+Epoch: 0 | Step: 35 | Loss: 19.695728302001953
+Epoch: 0 | Step: 35 | Loss: 19.834911346435547
+Epoch: 0 | Step: 36 | Loss: 19.512386322021484
+Epoch: 0 | Step: 36 | Loss: 19.85466766357422
+  1%|█                                                                                                                                 | 36/4605 [02:15<3:12:09,  2.52s/it]Traceback (most recent call last):
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 959, in <module>
+    main()
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 754, in main
+    accelerator.print(f"Epoch: {epoch} | Step: {completed_steps} | Loss: {loss}")
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 872, in __format__
+    return self.item().__format__(format_spec)
+KeyboardInterrupt

@@ -1,0 +1,62 @@
+12/29/2023 09:13:24 - INFO - __main__ - ***** Running training *****
+12/29/2023 09:13:24 - INFO - __main__ -   Num examples = 14732
+12/29/2023 09:13:24 - INFO - __main__ -   Num Epochs = 5
+12/29/2023 09:13:24 - INFO - __main__ -   Instantaneous batch size per device = 4
+12/29/2023 09:13:24 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 16
+12/29/2023 09:13:24 - INFO - __main__ -   Gradient Accumulation steps = 4
+12/29/2023 09:13:24 - INFO - __main__ -   Total optimization steps = 4605
+  0%|                                                                                                                                                                                                   | 0/4605 [00:00<?, ?it/s]12/29/2023 09:13:25 - INFO - accelerate.accelerator - Saving current state to exp_results/high_lr_linear_decay/step_0
+12/29/2023 09:13:31 - INFO - accelerate.checkpointing - Model weights saved in exp_results/high_lr_linear_decay/step_0/model.safetensors
+12/29/2023 09:13:31 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/high_lr_linear_decay/step_0/optimizer.bin
+12/29/2023 09:13:31 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/high_lr_linear_decay/step_0/scheduler.bin
+12/29/2023 09:13:31 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/high_lr_linear_decay/step_0/sampler.bin
+12/29/2023 09:13:31 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/high_lr_linear_decay/step_0/sampler_1.bin
+12/29/2023 09:13:31 - INFO - accelerate.checkpointing - Random states saved in exp_results/high_lr_linear_decay/step_0/random_states_0.pkl
+12/29/2023 09:14:07 - INFO - __main__ - epoch 0: accuracy: 0.5                                                                                                                                 | 1/205 [00:36<2:03:50, 36.43s/it]
+12/29/2023 09:14:07 - INFO - absl - Using default tokenizer.
+12/29/2023 09:14:08 - INFO - __main__ - epoch 0: ROUGE scores: {'rouge1': 24.710740124174173, 'rouge2': 4.074795943407232, 'rougeL': 13.794785417386478, 'rougeLsum': 13.794785417386478}
+|- Printing evaluation prediction
+[inf, 23.0, 1.0, inf]
+|- Printing evaluation ground truth
+[inf, 8.0, inf, inf]
+[34m[1mwandb[39m[22m: [33mWARNING[39m Step only supports monotonically increasing values, use define_metric to set a custom x axis. For details see: https://wandb.me/define-metric
+[34m[1mwandb[39m[22m: [33mWARNING[39m (User provided step: 0 is less than current step: 1. Dropping entry: {'accuracy': 0.5, 'rouge1': 24.710740124174173, 'rouge2': 4.074795943407232, 'rougeL': 13.794785417386478, 'epoch': 0, 'step': 0, '_timestamp': 1703841248.1044874}).
+12/29/2023 09:14:09 - INFO - accelerate.accelerator - Saving current state to exp_results/high_lr_linear_decay/step_0
+12/29/2023 09:14:22 - INFO - accelerate.checkpointing - Model weights saved in exp_results/high_lr_linear_decay/step_0/model.safetensors
+12/29/2023 09:14:22 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/high_lr_linear_decay/step_0/optimizer.bin
+12/29/2023 09:14:22 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/high_lr_linear_decay/step_0/scheduler.bin
+12/29/2023 09:14:22 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/high_lr_linear_decay/step_0/sampler.bin
+12/29/2023 09:14:22 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/high_lr_linear_decay/step_0/sampler_1.bin
+12/29/2023 09:14:22 - INFO - accelerate.checkpointing - Random states saved in exp_results/high_lr_linear_decay/step_0/random_states_0.pkl
+Error in sys.excepthook:                                                                                                                                                                                 | 0/205 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+  File "/usr/lib/python3.10/linecache.py", line 136, in updatecache
+    with tokenize.open(fullname) as fp:
+  File "/usr/lib/python3.10/tokenize.py", line 396, in open
+    encoding, lines = detect_encoding(buffer.readline)
+  File "/usr/lib/python3.10/tokenize.py", line 365, in detect_encoding
+    first = read_or_stop()
+  File "/usr/lib/python3.10/tokenize.py", line 323, in read_or_stop
+    return readline()
+KeyboardInterrupt
+Original exception was:
+Traceback (most recent call last):
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 911, in <module>
+    main()
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 766, in main
+    generated_tokens = accelerator.unwrap_model(model).generate(**gen_kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/peft/peft_model.py", line 1130, in generate
+    outputs = self.base_model.generate(**kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/generation/utils.py", line 1764, in generate
+    return self.sample(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/generation/utils.py", line 2875, in sample
+    next_token_scores = logits_warper(input_ids, next_token_scores)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/generation/logits_process.py", line 97, in __call__
+    scores = processor(input_ids, scores)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/generation/logits_process.py", line 456, in __call__
+    indices_to_remove = sorted_indices_to_remove.scatter(1, sorted_indices, sorted_indices_to_remove)
+KeyboardInterrupt

@@ -1,0 +1,39 @@
+Train dataset size: 14732
+Test dataset size: 819
+Max source length: 255
+Max target length: 50
+Keys of tokenized dataset: ['input_ids', 'attention_mask', 'labels']
+Saving the dataset (1/1 shards): 100%|█████████████████████████████████████████████████| 14732/14732 [00:00<00:00, 519850.64 examples/s]
+Saving the dataset (1/1 shards): 100%|█████████████████████████████████████████████████████| 819/819 [00:00<00:00, 243471.19 examples/s]
+
+
+
+
+Loading checkpoint shards:  92%|██████████████████████████████████████████████████████████████████      | 11/12 [00:09<00:00,  1.16it/s]
+trainable params: 18,874,368 || all params: 11,154,206,720 || trainable%: 0.16921300163961817
+{'output_dir': 'lora-flan-t5-xxl', 'overwrite_output_dir': False, 'do_train': False, 'do_eval': False, 'do_predict': False, 'evaluation_strategy': 'no', 'prediction_loss_only': False, 'per_device_train_batch_size': 32, 'per_device_eval_batch_size': 8, 'per_gpu_train_batch_size': None, 'per_gpu_eval_batch_size': None, 'gradient_accumulation_steps': 1, 'eval_accumulation_steps': None, 'eval_delay': 0, 'learning_rate': 0.001, 'weight_decay': 0.0, 'adam_beta1': 0.9, 'adam_beta2': 0.999, 'adam_epsilon': 1e-08, 'max_grad_norm': 1.0, 'num_train_epochs': 5, 'max_steps': -1, 'lr_scheduler_type': 'linear', 'lr_scheduler_kwargs': {}, 'warmup_ratio': 0.0, 'warmup_steps': 0, 'log_level': 'passive', 'log_level_replica': 'warning', 'log_on_each_node': True, 'logging_dir': 'lora-flan-t5-xxl/logs', 'logging_strategy': 'steps', 'logging_first_step': False, 'logging_steps': 10, 'logging_nan_inf_filter': True, 'save_strategy': 'steps', 'save_steps': 500, 'save_total_limit': None, 'save_safetensors': True, 'save_on_each_node': False, 'save_only_model': False, 'no_cuda': False, 'use_cpu': False, 'use_mps_device': False, 'seed': 42, 'data_seed': None, 'jit_mode_eval': False, 'use_ipex': False, 'bf16': False, 'fp16': False, 'fp16_opt_level': 'O1', 'half_precision_backend': 'auto', 'bf16_full_eval': False, 'fp16_full_eval': False, 'tf32': None, 'local_rank': 0, 'ddp_backend': None, 'tpu_num_cores': None, 'tpu_metrics_debug': False, 'debug': [], 'dataloader_drop_last': False, 'eval_steps': None, 'dataloader_num_workers': 0, 'past_index': -1, 'run_name': 'lora-flan-t5-xxl', 'disable_tqdm': False, 'remove_unused_columns': True, 'label_names': None, 'load_best_model_at_end': False, 'metric_for_best_model': None, 'greater_is_better': None, 'ignore_data_skip': False, 'fsdp': [], 'fsdp_min_num_params': 0, 'fsdp_config': {'min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False}, 'fsdp_transformer_layer_cls_to_wrap': None, 'deepspeed': None, 'label_smoothing_factor': 0.0, 'optim': 'adamw_torch', 'optim_args': None, 'adafactor': False, 'group_by_length': False, 'length_column_name': 'length', 'report_to': ['wandb'], 'ddp_find_unused_parameters': None, 'ddp_bucket_cap_mb': None, 'ddp_broadcast_buffers': None, 'dataloader_pin_memory': True, 'dataloader_persistent_workers': False, 'skip_memory_metrics': True, 'use_legacy_prediction_loop': False, 'push_to_hub': False, 'resume_from_checkpoint': None, 'hub_model_id': None, 'hub_strategy': 'every_save', 'hub_token': '<HUB_TOKEN>', 'hub_private_repo': False, 'hub_always_push': False, 'gradient_checkpointing': False, 'gradient_checkpointing_kwargs': None, 'include_inputs_for_metrics': False, 'fp16_backend': 'auto', 'push_to_hub_model_id': None, 'push_to_hub_organization': None, 'push_to_hub_token': '<PUSH_TO_HUB_TOKEN>', 'mp_parameters': '', 'auto_find_batch_size': True, 'full_determinism': False, 'torchdynamo': None, 'ray_scope': 'last', 'ddp_timeout': 1800, 'torch_compile': False, 'torch_compile_backend': None, 'torch_compile_mode': None, 'dispatch_batches': None, 'split_batches': False, 'include_tokens_per_second': False, 'include_num_input_tokens_seen': False, 'neftune_noise_alpha': None, 'sortish_sampler': False, 'predict_with_generate': False, 'generation_max_length': None, 'generation_num_beams': None, 'generation_config': None}
+Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████| 12/12 [00:09<00:00,  1.22it/s]
+/home/cwtang/.local/lib/python3.10/site-packages/peft/utils/other.py:143: FutureWarning: prepare_model_for_int8_training is deprecated and will be removed in a future version. Use prepare_model_for_kbit_training instead.
+  warnings.warn(
+  0%|                                                                                                          | 0/2305 [00:00<?, ?it/s]You're using a T5TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/home/cwtang/.local/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:322: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+
+  0%|                                                                                                | 2/2305 [00:29<9:23:47, 14.69s/it]Traceback (most recent call last):
+  File "/home/cwtang/david_dynamo/flan_t5.py", line 160, in <module>
+    trainer.train()
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/trainer.py", line 1537, in train
+    return inner_training_loop(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/utils/memory.py", line 136, in decorator
+    return function(batch_size, *args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/trainer.py", line 1854, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/trainer.py", line 2744, in training_step
+    self.accelerator.backward(loss)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/accelerator.py", line 1905, in backward
+    loss.backward(**kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

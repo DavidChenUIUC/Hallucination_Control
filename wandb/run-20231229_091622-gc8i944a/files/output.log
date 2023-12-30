@@ -1,0 +1,467 @@
+12/29/2023 09:16:23 - INFO - __main__ - ***** Running training *****
+12/29/2023 09:16:23 - INFO - __main__ -   Num examples = 14732
+12/29/2023 09:16:23 - INFO - __main__ -   Num Epochs = 5
+12/29/2023 09:16:23 - INFO - __main__ -   Instantaneous batch size per device = 4
+12/29/2023 09:16:23 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 16
+12/29/2023 09:16:23 - INFO - __main__ -   Gradient Accumulation steps = 4
+12/29/2023 09:16:23 - INFO - __main__ -   Total optimization steps = 4605
+  0%|                                                                                                                                                                                                   | 0/4605 [00:00<?, ?it/s]12/29/2023 09:16:24 - INFO - accelerate.accelerator - Saving current state to exp_results/baseline/step_0
+12/29/2023 09:16:31 - INFO - accelerate.checkpointing - Model weights saved in exp_results/baseline/step_0/model.safetensors
+12/29/2023 09:16:31 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/baseline/step_0/optimizer.bin
+12/29/2023 09:16:31 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/baseline/step_0/scheduler.bin
+12/29/2023 09:16:31 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/baseline/step_0/sampler.bin
+12/29/2023 09:16:31 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/baseline/step_0/sampler_1.bin
+12/29/2023 09:16:31 - INFO - accelerate.checkpointing - Random states saved in exp_results/baseline/step_0/random_states_0.pkl
+12/29/2023 09:16:32 - INFO - accelerate.accelerator - Saving current state to exp_results/baseline/step_0
+12/29/2023 09:16:40 - INFO - accelerate.checkpointing - Model weights saved in exp_results/baseline/step_0/model.safetensors
+12/29/2023 09:16:40 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/baseline/step_0/optimizer.bin
+12/29/2023 09:16:40 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/baseline/step_0/scheduler.bin
+12/29/2023 09:16:40 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/baseline/step_0/sampler.bin
+12/29/2023 09:16:40 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/baseline/step_0/sampler_1.bin
+12/29/2023 09:16:41 - INFO - accelerate.checkpointing - Random states saved in exp_results/baseline/step_0/random_states_0.pkl
+12/29/2023 09:16:42 - INFO - accelerate.accelerator - Saving current state to exp_results/baseline/step_0
+12/29/2023 09:16:59 - INFO - accelerate.checkpointing - Model weights saved in exp_results/baseline/step_0/model.safetensors
+12/29/2023 09:16:59 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/baseline/step_0/optimizer.bin
+12/29/2023 09:16:59 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/baseline/step_0/scheduler.bin
+12/29/2023 09:16:59 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/baseline/step_0/sampler.bin
+12/29/2023 09:16:59 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/baseline/step_0/sampler_1.bin
+12/29/2023 09:16:59 - INFO - accelerate.checkpointing - Random states saved in exp_results/baseline/step_0/random_states_0.pkl
+  0%|                                                                                                                                                                                        | 1/4605 [00:37<48:03:34, 37.58s/it]
+Epoch: 0 | Step: 1 | Loss: 7.935431957244873
+Epoch: 0 | Step: 1 | Loss: 6.915266990661621
+
+  0%|                                                                                                                                                                                        | 2/4605 [00:42<23:35:38, 18.45s/it]
+Epoch: 0 | Step: 1 | Loss: 8.899575233459473
+Epoch: 0 | Step: 2 | Loss: 4.96812105178833
+Epoch: 0 | Step: 2 | Loss: 8.457420349121094
+
+  0%|                                                                                                                                                                                        | 3/4605 [00:47<15:42:08, 12.28s/it]
+Epoch: 0 | Step: 2 | Loss: 9.543984413146973
+Epoch: 0 | Step: 3 | Loss: 2.439509868621826
+Epoch: 0 | Step: 3 | Loss: 8.239547729492188
+Epoch: 0 | Step: 3 | Loss: 7.205676555633545
+
+  0%|▏                                                                                                                                                                                       | 4/4605 [00:52<11:59:11,  9.38s/it]
+Epoch: 0 | Step: 4 | Loss: 8.928214073181152
+Epoch: 0 | Step: 4 | Loss: 4.111166000366211
+
+  0%|▏                                                                                                                                                                                        | 5/4605 [00:57<9:55:48,  7.77s/it]
+Epoch: 0 | Step: 4 | Loss: 5.998843193054199
+Epoch: 0 | Step: 5 | Loss: 8.456235885620117
+Epoch: 0 | Step: 5 | Loss: 10.369030952453613
+
+  0%|▏                                                                                                                                                                                        | 6/4605 [01:02<8:52:15,  6.94s/it]
+Epoch: 0 | Step: 5 | Loss: 6.873488903045654
+Epoch: 0 | Step: 6 | Loss: 10.692496299743652
+Epoch: 0 | Step: 6 | Loss: 10.806391716003418
+
+  0%|▎                                                                                                                                                                                        | 7/4605 [01:07<8:00:52,  6.27s/it]
+Epoch: 0 | Step: 6 | Loss: 10.12934684753418
+Epoch: 0 | Step: 7 | Loss: 9.66568374633789
+Epoch: 0 | Step: 7 | Loss: 4.313244819641113
+
+  0%|▎                                                                                                                                                                                        | 8/4605 [01:12<7:27:55,  5.85s/it]
+Epoch: 0 | Step: 7 | Loss: 9.584606170654297
+Epoch: 0 | Step: 8 | Loss: 7.961325645446777
+Epoch: 0 | Step: 8 | Loss: 8.966869354248047
+
+  0%|▎                                                                                                                                                                                        | 9/4605 [01:17<7:06:15,  5.56s/it]
+Epoch: 0 | Step: 8 | Loss: 10.405609130859375
+Epoch: 0 | Step: 9 | Loss: 8.559185028076172
+Epoch: 0 | Step: 9 | Loss: 6.5409650802612305
+Epoch: 0 | Step: 9 | Loss: 6.854380130767822
+
+  0%|▍                                                                                                                                                                                       | 10/4605 [01:22<6:51:29,  5.37s/it]
+Epoch: 0 | Step: 10 | Loss: 8.27995491027832
+Epoch: 0 | Step: 10 | Loss: 4.082537651062012
+
+  0%|▍                                                                                                                                                                                       | 11/4605 [01:27<6:41:25,  5.24s/it]
+Epoch: 0 | Step: 10 | Loss: 7.003333568572998
+Epoch: 0 | Step: 11 | Loss: 9.028346061706543
+Epoch: 0 | Step: 11 | Loss: 7.836575508117676
+Epoch: 0 | Step: 11 | Loss: 6.90641975402832
+
+  0%|▍                                                                                                                                                                                       | 12/4605 [01:32<6:34:27,  5.15s/it]
+Epoch: 0 | Step: 12 | Loss: 9.794981956481934
+Epoch: 0 | Step: 12 | Loss: 9.23143482208252
+
+  0%|▌                                                                                                                                                                                       | 13/4605 [01:37<6:29:48,  5.09s/it]
+Epoch: 0 | Step: 12 | Loss: 4.913726329803467
+Epoch: 0 | Step: 13 | Loss: 5.528091907501221
+Epoch: 0 | Step: 13 | Loss: 6.309509754180908
+Epoch: 0 | Step: 13 | Loss: 7.178358554840088
+
+  0%|▌                                                                                                                                                                                       | 14/4605 [01:42<6:26:24,  5.05s/it]
+Epoch: 0 | Step: 14 | Loss: 8.564228057861328
+Epoch: 0 | Step: 14 | Loss: 4.215439319610596
+
+  0%|▌                                                                                                                                                                                       | 15/4605 [01:47<6:24:02,  5.02s/it]
+Epoch: 0 | Step: 14 | Loss: 7.309272289276123
+Epoch: 0 | Step: 15 | Loss: 8.208442687988281
+Epoch: 0 | Step: 15 | Loss: 7.834395408630371
+Epoch: 0 | Step: 15 | Loss: 7.756532669067383
+
+  0%|▋                                                                                                                                                                                       | 16/4605 [01:52<6:22:34,  5.00s/it]
+Epoch: 0 | Step: 16 | Loss: 9.63869571685791
+Epoch: 0 | Step: 16 | Loss: 6.006543159484863
+
+  0%|▋                                                                                                                                                                                       | 17/4605 [01:57<6:21:29,  4.99s/it]
+Epoch: 0 | Step: 16 | Loss: 6.252809047698975
+Epoch: 0 | Step: 17 | Loss: 8.211560249328613
+Epoch: 0 | Step: 17 | Loss: 4.925815582275391
+Epoch: 0 | Step: 17 | Loss: 7.137631893157959
+
+  0%|▋                                                                                                                                                                                       | 18/4605 [02:02<6:20:41,  4.98s/it]
+Epoch: 0 | Step: 18 | Loss: 5.869944095611572
+Epoch: 0 | Step: 18 | Loss: 6.30180549621582
+Epoch: 0 | Step: 18 | Loss: 8.576689720153809
+
+  0%|▊                                                                                                                                                                                       | 19/4605 [02:07<6:20:05,  4.97s/it]
+Epoch: 0 | Step: 19 | Loss: 6.689691543579102
+Epoch: 0 | Step: 19 | Loss: 5.920788288116455
+Epoch: 0 | Step: 19 | Loss: 7.657621383666992
+
+  0%|▊                                                                                                                                                                                       | 20/4605 [02:12<6:19:37,  4.97s/it]
+Epoch: 0 | Step: 20 | Loss: 9.813043594360352
+Epoch: 0 | Step: 20 | Loss: 6.059820175170898
+Epoch: 0 | Step: 20 | Loss: 7.238733291625977
+
+  0%|▊                                                                                                                                                                                       | 21/4605 [02:16<6:19:19,  4.97s/it]
+Epoch: 0 | Step: 21 | Loss: 10.065678596496582
+Epoch: 0 | Step: 21 | Loss: 6.102508068084717
+Epoch: 0 | Step: 21 | Loss: 1.7533897161483765
+
+  0%|▉                                                                                                                                                                                       | 22/4605 [02:21<6:19:15,  4.97s/it]
+Epoch: 0 | Step: 22 | Loss: 9.486724853515625
+Epoch: 0 | Step: 22 | Loss: 9.980657577514648
+Epoch: 0 | Step: 22 | Loss: 2.8052830696105957
+
+  0%|▉                                                                                                                                                                                       | 23/4605 [02:26<6:19:14,  4.97s/it]
+Epoch: 0 | Step: 23 | Loss: 9.708061218261719
+Epoch: 0 | Step: 23 | Loss: 9.856255531311035
+Epoch: 0 | Step: 23 | Loss: 5.509409427642822
+
+  1%|▉                                                                                                                                                                                       | 24/4605 [02:31<6:19:13,  4.97s/it]
+Epoch: 0 | Step: 24 | Loss: 9.305477142333984
+Epoch: 0 | Step: 24 | Loss: 8.001665115356445
+Epoch: 0 | Step: 24 | Loss: 5.990972518920898
+
+  1%|▉                                                                                                                                                                                       | 25/4605 [02:36<6:19:12,  4.97s/it]
+Epoch: 0 | Step: 25 | Loss: 9.066709518432617
+Epoch: 0 | Step: 25 | Loss: 7.6439008712768555
+
+  1%|█                                                                                                                                                                                       | 26/4605 [02:41<6:19:11,  4.97s/it]
+Epoch: 0 | Step: 25 | Loss: 6.947845458984375
+Epoch: 0 | Step: 26 | Loss: 5.373126983642578
+Epoch: 0 | Step: 26 | Loss: 6.236501693725586
+Epoch: 0 | Step: 26 | Loss: 9.458686828613281
+
+  1%|█                                                                                                                                                                                       | 27/4605 [02:46<6:19:08,  4.97s/it]
+Epoch: 0 | Step: 27 | Loss: 8.091318130493164
+Epoch: 0 | Step: 27 | Loss: 5.577173709869385
+
+  1%|█                                                                                                                                                                                       | 28/4605 [02:51<6:19:06,  4.97s/it]
+Epoch: 0 | Step: 27 | Loss: 8.457840919494629
+Epoch: 0 | Step: 28 | Loss: 6.596778392791748
+Epoch: 0 | Step: 28 | Loss: 8.065041542053223
+Epoch: 0 | Step: 28 | Loss: 5.048658847808838
+
+  1%|█▏                                                                                                                                                                                      | 29/4605 [02:56<6:19:08,  4.97s/it]
+Epoch: 0 | Step: 29 | Loss: 4.449720859527588
+Epoch: 0 | Step: 29 | Loss: 5.2465128898620605
+
+  1%|█▏                                                                                                                                                                                      | 30/4605 [03:01<6:19:00,  4.97s/it]
+Epoch: 0 | Step: 29 | Loss: 5.448204040527344
+Epoch: 0 | Step: 30 | Loss: 6.7322564125061035
+Epoch: 0 | Step: 30 | Loss: 7.148686408996582
+Epoch: 0 | Step: 30 | Loss: 5.436437129974365
+
+  1%|█▏                                                                                                                                                                                      | 31/4605 [03:06<6:18:53,  4.97s/it]
+Epoch: 0 | Step: 31 | Loss: 6.905649185180664
+Epoch: 0 | Step: 31 | Loss: 5.57776403427124
+
+  1%|█▎                                                                                                                                                                                      | 32/4605 [03:11<6:18:44,  4.97s/it]
+Epoch: 0 | Step: 31 | Loss: 5.940310478210449
+Epoch: 0 | Step: 32 | Loss: 6.798537731170654
+Epoch: 0 | Step: 32 | Loss: 8.15699291229248
+Epoch: 0 | Step: 32 | Loss: 5.391141414642334
+
+  1%|█▎                                                                                                                                                                                      | 33/4605 [03:16<6:18:47,  4.97s/it]
+Epoch: 0 | Step: 33 | Loss: 6.025188446044922
+Epoch: 0 | Step: 33 | Loss: 9.336137771606445
+
+  1%|█▎                                                                                                                                                                                      | 34/4605 [03:21<6:18:44,  4.97s/it]
+Epoch: 0 | Step: 33 | Loss: 3.5677897930145264
+Epoch: 0 | Step: 34 | Loss: 8.441757202148438
+Epoch: 0 | Step: 34 | Loss: 5.275274276733398
+Epoch: 0 | Step: 34 | Loss: 4.271500110626221
+
+  1%|█▍                                                                                                                                                                                      | 35/4605 [03:26<6:18:37,  4.97s/it]
+Epoch: 0 | Step: 35 | Loss: 5.172388076782227
+Epoch: 0 | Step: 35 | Loss: 5.453873634338379
+
+  1%|█▍                                                                                                                                                                                      | 36/4605 [03:31<6:18:32,  4.97s/it]
+Epoch: 0 | Step: 35 | Loss: 6.5550007820129395
+Epoch: 0 | Step: 36 | Loss: 7.072349548339844
+Epoch: 0 | Step: 36 | Loss: 5.937964916229248
+Epoch: 0 | Step: 36 | Loss: 6.227505207061768
+
+  1%|█▍                                                                                                                                                                                      | 37/4605 [03:36<6:18:27,  4.97s/it]
+Epoch: 0 | Step: 37 | Loss: 5.222219467163086
+Epoch: 0 | Step: 37 | Loss: 6.492692470550537
+
+  1%|█▌                                                                                                                                                                                      | 38/4605 [03:41<6:18:29,  4.97s/it]
+Epoch: 0 | Step: 37 | Loss: 7.157228946685791
+Epoch: 0 | Step: 38 | Loss: 4.176943778991699
+Epoch: 0 | Step: 38 | Loss: 6.336512088775635
+Epoch: 0 | Step: 38 | Loss: 6.217784404754639
+
+  1%|█▌                                                                                                                                                                                      | 39/4605 [03:46<6:18:18,  4.97s/it]
+Epoch: 0 | Step: 39 | Loss: 7.9678826332092285
+Epoch: 0 | Step: 39 | Loss: 5.407481670379639
+
+  1%|█▌                                                                                                                                                                                      | 40/4605 [03:51<6:18:15,  4.97s/it]
+Epoch: 0 | Step: 39 | Loss: 5.406618595123291
+Epoch: 0 | Step: 40 | Loss: 5.605203151702881
+Epoch: 0 | Step: 40 | Loss: 6.668935298919678
+Epoch: 0 | Step: 40 | Loss: 6.606678485870361
+
+  1%|█▋                                                                                                                                                                                      | 41/4605 [03:56<6:18:11,  4.97s/it]
+Epoch: 0 | Step: 41 | Loss: 6.158041954040527
+Epoch: 0 | Step: 41 | Loss: 5.381247520446777
+
+  1%|█▋                                                                                                                                                                                      | 42/4605 [04:01<6:18:06,  4.97s/it]
+Epoch: 0 | Step: 41 | Loss: 6.140931606292725
+Epoch: 0 | Step: 42 | Loss: 8.413814544677734
+Epoch: 0 | Step: 42 | Loss: 7.237122058868408
+Epoch: 0 | Step: 42 | Loss: 6.814152240753174
+
+  1%|█▋                                                                                                                                                                                      | 43/4605 [04:06<6:17:57,  4.97s/it]
+Epoch: 0 | Step: 43 | Loss: 5.115604400634766
+Epoch: 0 | Step: 43 | Loss: 7.7290191650390625
+
+  1%|█▊                                                                                                                                                                                      | 44/4605 [04:11<6:17:46,  4.97s/it]
+Epoch: 0 | Step: 43 | Loss: 7.48000955581665
+Epoch: 0 | Step: 44 | Loss: 6.317497730255127
+Epoch: 0 | Step: 44 | Loss: 4.493833065032959
+Epoch: 0 | Step: 44 | Loss: 7.349248886108398
+
+  1%|█▊                                                                                                                                                                                      | 45/4605 [04:16<6:17:52,  4.97s/it]
+Epoch: 0 | Step: 45 | Loss: 6.400691509246826
+Epoch: 0 | Step: 45 | Loss: 6.169270038604736
+Epoch: 0 | Step: 45 | Loss: 4.975574970245361
+
+  1%|█▊                                                                                                                                                                                      | 46/4605 [04:21<6:17:45,  4.97s/it]
+Epoch: 0 | Step: 46 | Loss: 7.706550121307373
+Epoch: 0 | Step: 46 | Loss: 8.273332595825195
+Epoch: 0 | Step: 46 | Loss: 7.71990442276001
+
+  1%|█▉                                                                                                                                                                                      | 47/4605 [04:26<6:17:28,  4.97s/it]
+Epoch: 0 | Step: 47 | Loss: 5.87327241897583
+Epoch: 0 | Step: 47 | Loss: 6.581241607666016
+Epoch: 0 | Step: 47 | Loss: 2.996490240097046
+
+  1%|█▉                                                                                                                                                                                      | 48/4605 [04:31<6:17:23,  4.97s/it]
+Epoch: 0 | Step: 48 | Loss: 4.166100978851318
+Epoch: 0 | Step: 48 | Loss: 3.8499839305877686
+Epoch: 0 | Step: 48 | Loss: 2.5233757495880127
+
+  1%|█▉                                                                                                                                                                                      | 49/4605 [04:36<6:17:22,  4.97s/it]
+Epoch: 0 | Step: 49 | Loss: 3.5885426998138428
+Epoch: 0 | Step: 49 | Loss: 6.800436973571777
+Epoch: 0 | Step: 49 | Loss: 4.28762149810791
+
+
+  1%|██                                                                                                                                                                                      | 51/4605 [04:46<6:16:13,  4.96s/it]
+Epoch: 0 | Step: 51 | Loss: 3.0363173484802246
+Epoch: 0 | Step: 51 | Loss: 5.438198566436768
+Epoch: 0 | Step: 51 | Loss: 4.651447296142578
+
+  1%|██                                                                                                                                                                                      | 52/4605 [04:51<6:17:19,  4.97s/it]
+Epoch: 0 | Step: 52 | Loss: 6.991249084472656
+Epoch: 0 | Step: 52 | Loss: 6.683228015899658
+Epoch: 0 | Step: 52 | Loss: 5.492133140563965
+Epoch: 0 | Step: 52 | Loss: 5.850589752197266
+
+  1%|██                                                                                                                                                                                      | 53/4605 [04:56<6:17:12,  4.97s/it]
+Epoch: 0 | Step: 53 | Loss: 4.297922611236572
+Epoch: 0 | Step: 53 | Loss: 6.813544750213623
+
+  1%|██▏                                                                                                                                                                                     | 54/4605 [05:01<6:17:05,  4.97s/it]
+Epoch: 0 | Step: 54 | Loss: 7.379336833953857
+Epoch: 0 | Step: 54 | Loss: 5.425586700439453
+
+  1%|██▏                                                                                                                                                                                     | 55/4605 [05:05<6:17:03,  4.97s/it]
+Epoch: 0 | Step: 54 | Loss: 5.392683506011963
+Epoch: 0 | Step: 55 | Loss: 6.419882297515869
+Epoch: 0 | Step: 55 | Loss: 4.8764262199401855
+Epoch: 0 | Step: 55 | Loss: 3.946939468383789
+
+  1%|██▏                                                                                                                                                                                     | 56/4605 [05:10<6:16:57,  4.97s/it]
+Epoch: 0 | Step: 56 | Loss: 5.159004211425781
+Epoch: 0 | Step: 56 | Loss: 7.841619491577148
+
+  1%|██▎                                                                                                                                                                                     | 57/4605 [05:15<6:16:50,  4.97s/it]
+Epoch: 0 | Step: 56 | Loss: 5.634056091308594
+Epoch: 0 | Step: 57 | Loss: 7.129541873931885
+Epoch: 0 | Step: 57 | Loss: 7.063186168670654
+Epoch: 0 | Step: 57 | Loss: 4.241428375244141
+
+  1%|██▎                                                                                                                                                                                     | 58/4605 [05:20<6:18:00,  4.99s/it]
+Epoch: 0 | Step: 58 | Loss: 5.797086238861084
+Epoch: 0 | Step: 58 | Loss: 6.164022445678711
+
+  1%|██▎                                                                                                                                                                                     | 59/4605 [05:25<6:17:26,  4.98s/it]
+Epoch: 0 | Step: 58 | Loss: 4.364138126373291
+Epoch: 0 | Step: 59 | Loss: 6.210037708282471
+Epoch: 0 | Step: 59 | Loss: 3.9546213150024414
+Epoch: 0 | Step: 59 | Loss: 5.974211692810059
+
+  1%|██▍                                                                                                                                                                                     | 60/4605 [05:30<6:17:08,  4.98s/it]
+Epoch: 0 | Step: 60 | Loss: 7.313313007354736
+Epoch: 0 | Step: 60 | Loss: 4.526841640472412
+
+  1%|██▍                                                                                                                                                                                     | 61/4605 [05:35<6:16:49,  4.98s/it]
+Epoch: 0 | Step: 60 | Loss: 8.015251159667969
+Epoch: 0 | Step: 61 | Loss: 5.8583664894104
+Epoch: 0 | Step: 61 | Loss: 4.975357532501221
+Epoch: 0 | Step: 61 | Loss: 3.1617133617401123
+
+  1%|██▍                                                                                                                                                                                     | 62/4605 [05:40<6:16:39,  4.97s/it]
+Epoch: 0 | Step: 62 | Loss: 2.8428690433502197
+Epoch: 0 | Step: 62 | Loss: 4.8977251052856445
+
+  1%|██▌                                                                                                                                                                                     | 63/4605 [05:45<6:16:32,  4.97s/it]
+Epoch: 0 | Step: 62 | Loss: 5.85084867477417
+Epoch: 0 | Step: 63 | Loss: 6.992227554321289
+Epoch: 0 | Step: 63 | Loss: 3.943025588989258
+Epoch: 0 | Step: 63 | Loss: 5.124061584472656
+
+  1%|██▌                                                                                                                                                                                     | 64/4605 [05:50<6:16:28,  4.97s/it]
+Epoch: 0 | Step: 64 | Loss: 6.856720924377441
+Epoch: 0 | Step: 64 | Loss: 6.222779750823975
+
+  1%|██▌                                                                                                                                                                                     | 65/4605 [05:55<6:16:25,  4.97s/it]
+Epoch: 0 | Step: 64 | Loss: 5.951982021331787
+Epoch: 0 | Step: 65 | Loss: 7.182310104370117
+Epoch: 0 | Step: 65 | Loss: 5.498054504394531
+Epoch: 0 | Step: 65 | Loss: 5.4072585105896
+
+  1%|██▋                                                                                                                                                                                     | 66/4605 [06:00<6:16:17,  4.97s/it]
+Epoch: 0 | Step: 66 | Loss: 6.879795551300049
+Epoch: 0 | Step: 66 | Loss: 6.312523365020752
+
+  1%|██▋                                                                                                                                                                                     | 67/4605 [06:05<6:16:08,  4.97s/it]
+Epoch: 0 | Step: 66 | Loss: 6.043833255767822
+Epoch: 0 | Step: 67 | Loss: 2.6115007400512695
+Epoch: 0 | Step: 67 | Loss: 4.123635768890381
+Epoch: 0 | Step: 67 | Loss: 5.533848285675049
+
+  1%|██▋                                                                                                                                                                                     | 68/4605 [06:10<6:16:11,  4.97s/it]
+Epoch: 0 | Step: 68 | Loss: 5.649099349975586
+Epoch: 0 | Step: 68 | Loss: 4.184945106506348
+
+  1%|██▊                                                                                                                                                                                     | 69/4605 [06:15<6:16:14,  4.98s/it]
+Epoch: 0 | Step: 68 | Loss: 4.270910263061523
+Epoch: 0 | Step: 69 | Loss: 5.252566337585449
+Epoch: 0 | Step: 69 | Loss: 5.89705753326416
+Epoch: 0 | Step: 69 | Loss: 5.157733917236328
+
+  2%|██▊                                                                                                                                                                                     | 70/4605 [06:20<6:16:00,  4.97s/it]
+Epoch: 0 | Step: 70 | Loss: 3.3535513877868652
+Epoch: 0 | Step: 70 | Loss: 6.330227375030518
+
+  2%|██▊                                                                                                                                                                                     | 71/4605 [06:25<6:15:49,  4.97s/it]
+Epoch: 0 | Step: 70 | Loss: 6.634341239929199
+Epoch: 0 | Step: 71 | Loss: 3.2718379497528076
+Epoch: 0 | Step: 71 | Loss: 5.821946144104004
+Epoch: 0 | Step: 71 | Loss: 3.269911527633667
+
+  2%|██▉                                                                                                                                                                                     | 72/4605 [06:30<6:15:39,  4.97s/it]
+Epoch: 0 | Step: 72 | Loss: 4.783125400543213
+Epoch: 0 | Step: 72 | Loss: 5.522185325622559
+
+  2%|██▉                                                                                                                                                                                     | 73/4605 [06:35<6:15:30,  4.97s/it]
+Epoch: 0 | Step: 72 | Loss: 6.1221113204956055
+Epoch: 0 | Step: 73 | Loss: 5.638113021850586
+Epoch: 0 | Step: 73 | Loss: 7.230276584625244
+Epoch: 0 | Step: 73 | Loss: 7.459645748138428
+
+  2%|██▉                                                                                                                                                                                     | 74/4605 [06:40<6:15:27,  4.97s/it]
+Epoch: 0 | Step: 74 | Loss: 5.362946510314941
+Epoch: 0 | Step: 74 | Loss: 5.9232611656188965
+
+  2%|██▉                                                                                                                                                                                     | 75/4605 [06:45<6:15:26,  4.97s/it]
+Epoch: 0 | Step: 74 | Loss: 5.563949108123779
+Epoch: 0 | Step: 75 | Loss: 4.220351696014404
+Epoch: 0 | Step: 75 | Loss: 5.402052402496338
+
+  2%|███                                                                                                                                                                                     | 76/4605 [06:50<6:15:23,  4.97s/it]
+Epoch: 0 | Step: 75 | Loss: 5.434040069580078
+Epoch: 0 | Step: 76 | Loss: 4.184037685394287
+Epoch: 0 | Step: 76 | Loss: 4.347701549530029
+Epoch: 0 | Step: 76 | Loss: 3.978318214416504
+
+  2%|███                                                                                                                                                                                     | 77/4605 [06:55<6:15:23,  4.97s/it]
+Epoch: 0 | Step: 77 | Loss: 4.454669952392578
+Epoch: 0 | Step: 77 | Loss: 4.587681293487549
+Epoch: 0 | Step: 77 | Loss: 7.149868011474609
+
+  2%|███                                                                                                                                                                                     | 78/4605 [07:00<6:15:21,  4.97s/it]
+Epoch: 0 | Step: 78 | Loss: 2.7980880737304688
+Epoch: 0 | Step: 78 | Loss: 5.3271098136901855
+Epoch: 0 | Step: 78 | Loss: 7.688613414764404
+
+  2%|███▏                                                                                                                                                                                    | 79/4605 [07:05<6:15:10,  4.97s/it]
+Epoch: 0 | Step: 79 | Loss: 5.388724327087402
+Epoch: 0 | Step: 79 | Loss: 4.877687454223633
+Epoch: 0 | Step: 79 | Loss: 4.701088905334473
+
+  2%|███▏                                                                                                                                                                                    | 80/4605 [07:10<6:15:02,  4.97s/it]
+Epoch: 0 | Step: 80 | Loss: 6.031225681304932
+Epoch: 0 | Step: 80 | Loss: 4.968181610107422
+Epoch: 0 | Step: 80 | Loss: 5.329003810882568
+
+  2%|███▏                                                                                                                                                                                    | 81/4605 [07:15<6:15:04,  4.97s/it]
+Epoch: 0 | Step: 81 | Loss: 5.462813377380371
+Epoch: 0 | Step: 81 | Loss: 4.08005952835083
+Epoch: 0 | Step: 81 | Loss: 4.291574954986572
+
+  2%|███▎                                                                                                                                                                                    | 82/4605 [07:20<6:14:53,  4.97s/it]
+Epoch: 0 | Step: 82 | Loss: 4.524610996246338
+Epoch: 0 | Step: 82 | Loss: 3.443007230758667
+Epoch: 0 | Step: 82 | Loss: 3.701589584350586
+
+  2%|███▎                                                                                                                                                                                    | 83/4605 [07:25<6:14:47,  4.97s/it]
+Epoch: 0 | Step: 83 | Loss: 4.4190754890441895
+Epoch: 0 | Step: 83 | Loss: 2.8837180137634277
+  2%|███▎                                                                                                                                                                                    | 84/4605 [07:30<6:14:38,  4.97s/it]Traceback (most recent call last):
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 905, in <module>
+    return rouge_scores
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 714, in main
+    outputs = model(**batch)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/peft/peft_model.py", line 1073, in forward
+    return self.base_model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/peft/tuners/tuners_utils.py", line 100, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py", line 1181, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py", line 1068, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py", line 809, in forward
+    hidden_states = self.post_attention_layernorm(hidden_states)
+Epoch: 0 | Step: 83 | Loss: 6.220722198486328

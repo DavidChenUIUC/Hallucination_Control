@@ -1,0 +1,162 @@
+Train dataset size: 14732
+Test dataset size: 819
+Max source length: 255
+Max target length: 50
+Keys of tokenized dataset: ['input_ids', 'attention_mask', 'labels']
+Saving the dataset (1/1 shards): 100%|█████████████████████████████████████████████████| 14732/14732 [00:00<00:00, 582121.84 examples/s]
+Saving the dataset (1/1 shards): 100%|█████████████████████████████████████████████████████| 819/819 [00:00<00:00, 242423.08 examples/s]
+
+
+
+Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████| 12/12 [00:08<00:00,  1.40it/s]
+/home/cwtang/.local/lib/python3.10/site-packages/peft/utils/other.py:143: FutureWarning: prepare_model_for_int8_training is deprecated and will be removed in a future version. Use prepare_model_for_kbit_training instead.
+  warnings.warn(
+trainable params: 18,874,368 || all params: 11,154,206,720 || trainable%: 0.16921300163961817
+{'output_dir': 'lora-flan-t5-xxl', 'overwrite_output_dir': False, 'do_train': False, 'do_eval': True, 'do_predict': False, 'evaluation_strategy': 'steps', 'prediction_loss_only': False, 'per_device_train_batch_size': 32, 'per_device_eval_batch_size': 32, 'per_gpu_train_batch_size': None, 'per_gpu_eval_batch_size': None, 'gradient_accumulation_steps': 1, 'eval_accumulation_steps': None, 'eval_delay': 0, 'learning_rate': 0.001, 'weight_decay': 0.0, 'adam_beta1': 0.9, 'adam_beta2': 0.999, 'adam_epsilon': 1e-08, 'max_grad_norm': 1.0, 'num_train_epochs': 5, 'max_steps': -1, 'lr_scheduler_type': 'cosine', 'lr_scheduler_kwargs': {}, 'warmup_ratio': 0.0, 'warmup_steps': 0, 'log_level': 'passive', 'log_level_replica': 'warning', 'log_on_each_node': True, 'logging_dir': 'lora-flan-t5-xxl/logs', 'logging_strategy': 'steps', 'logging_first_step': False, 'logging_steps': 1, 'logging_nan_inf_filter': True, 'save_strategy': 'steps', 'save_steps': 500, 'save_total_limit': None, 'save_safetensors': True, 'save_on_each_node': False, 'save_only_model': False, 'no_cuda': False, 'use_cpu': False, 'use_mps_device': False, 'seed': 42, 'data_seed': None, 'jit_mode_eval': False, 'use_ipex': False, 'bf16': False, 'fp16': False, 'fp16_opt_level': 'O1', 'half_precision_backend': 'auto', 'bf16_full_eval': False, 'fp16_full_eval': False, 'tf32': None, 'local_rank': 0, 'ddp_backend': None, 'tpu_num_cores': None, 'tpu_metrics_debug': False, 'debug': [], 'dataloader_drop_last': False, 'eval_steps': 0.002, 'dataloader_num_workers': 0, 'past_index': -1, 'run_name': 'lora-flan-t5-xxl', 'disable_tqdm': False, 'remove_unused_columns': True, 'label_names': None, 'load_best_model_at_end': False, 'metric_for_best_model': None, 'greater_is_better': None, 'ignore_data_skip': False, 'fsdp': [], 'fsdp_min_num_params': 0, 'fsdp_config': {'min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False}, 'fsdp_transformer_layer_cls_to_wrap': None, 'deepspeed': None, 'label_smoothing_factor': 0.0, 'optim': 'adamw_torch', 'optim_args': None, 'adafactor': False, 'group_by_length': False, 'length_column_name': 'length', 'report_to': ['wandb'], 'ddp_find_unused_parameters': None, 'ddp_bucket_cap_mb': None, 'ddp_broadcast_buffers': None, 'dataloader_pin_memory': True, 'dataloader_persistent_workers': False, 'skip_memory_metrics': True, 'use_legacy_prediction_loop': False, 'push_to_hub': False, 'resume_from_checkpoint': None, 'hub_model_id': None, 'hub_strategy': 'every_save', 'hub_token': '<HUB_TOKEN>', 'hub_private_repo': False, 'hub_always_push': False, 'gradient_checkpointing': False, 'gradient_checkpointing_kwargs': None, 'include_inputs_for_metrics': False, 'fp16_backend': 'auto', 'push_to_hub_model_id': None, 'push_to_hub_organization': None, 'push_to_hub_token': '<PUSH_TO_HUB_TOKEN>', 'mp_parameters': '', 'auto_find_batch_size': True, 'full_determinism': False, 'torchdynamo': None, 'ray_scope': 'last', 'ddp_timeout': 1800, 'torch_compile': False, 'torch_compile_backend': None, 'torch_compile_mode': None, 'dispatch_batches': None, 'split_batches': False, 'include_tokens_per_second': False, 'include_num_input_tokens_seen': False, 'neftune_noise_alpha': None, 'sortish_sampler': False, 'predict_with_generate': False, 'generation_max_length': None, 'generation_num_beams': None, 'generation_config': None}
+|- BS:  32
+  0%|                                                                                                          | 0/2305 [00:00<?, ?it/s]You're using a T5TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/home/cwtang/.local/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:322: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+  0%|                                                                                               | 1/2305 [00:17<11:12:03, 17.50s/it]
+{'loss': 1.1617, 'learning_rate': 0.0009999995355939944, 'epoch': 0.0}
+
+  0%|                                                                                                | 2/2305 [00:31<9:41:37, 15.15s/it]
+
+  0%|                                                                                                | 3/2305 [00:44<9:13:38, 14.43s/it]
+
+
+  0%|▏                                                                                               | 5/2305 [01:11<8:54:09, 13.93s/it]
+{'loss': 1.2166, 'learning_rate': 0.0009999883898929927, 'epoch': 0.01}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  File "/home/cwtang/david_dynamo/flan_t5.py", line 196, in <module>████████████████████████████████████| 26/26 [01:26<00:00,  3.30s/it]
+    trainer.train()
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/trainer.py", line 1537, in train
+    return inner_training_loop(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/utils/memory.py", line 136, in decorator
+    return function(batch_size, *args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/trainer.py", line 1914, in _inner_training_loop
+    self._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/trainer.py", line 2268, in _maybe_log_save_evaluate
+    metrics = self.evaluate(ignore_keys=ignore_keys_for_eval)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/trainer_seq2seq.py", line 166, in evaluate
+    return super().evaluate(eval_dataset, ignore_keys=ignore_keys, metric_key_prefix=metric_key_prefix)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/trainer.py", line 3019, in evaluate
+    output = eval_loop(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/trainer.py", line 3310, in evaluation_loop
+    metrics = self.compute_metrics(EvalPrediction(predictions=all_preds, label_ids=all_labels))
+  File "/home/cwtang/david_dynamo/flan_t5.py", line 163, in compute_metrics
+    decoded_preds = tokenizer.batch_decode(predictions, skip_special_tokens=True)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 3710, in batch_decode
+    return [
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 3711, in <listcomp>
+    self.decode(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 3750, in decode
+    return self._decode(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/tokenization_utils_fast.py", line 625, in _decode
+    text = self._tokenizer.decode(token_ids, skip_special_tokens=skip_special_tokens)
+TypeError: argument 'ids': 'list' object cannot be interpreted as an integer
+<class 'numpy.ndarray'>
+819
+[[[-40.541985   -4.6390452  -9.118661  ... -40.578827  -41.0026
+   -40.541363 ]
+  [-51.195614   -8.246997   -9.389369  ... -51.277378  -51.365776
+   -50.91378  ]
+  [-46.677513   -8.043308  -10.17865   ... -47.122032  -46.71195
+   -46.715755 ]
+  ...
+  [-39.190136   -3.4791718  -8.610854  ... -39.06711   -39.632324
+   -39.118614 ]
+  [-39.158463   -3.5369155  -8.605755  ... -39.028675  -39.602215
+   -39.080193 ]
+  [-39.140167   -3.5378194  -8.616142  ... -39.008636  -39.587364
+   -39.063618 ]]
+ [[-43.794857   -4.5861473 -10.008301  ... -43.86304   -44.09722
+   -43.711998 ]
+  [-54.641945  -10.112542  -10.645173  ... -55.137398  -54.751007
+   -54.517826 ]
+  [-64.02886   -12.2984085 -15.054718  ... -64.80585   -64.04472
+   -64.21217  ]
+  ...
+  [-44.215366   -3.9780567  -9.928836  ... -44.087906  -44.554714
+   -44.09104  ]
+  [-44.207584   -3.9371285  -9.903978  ... -44.088108  -44.54439
+   -44.081867 ]
+  [-44.15324    -4.028673   -9.960275  ... -44.020393  -44.489037
+   -44.021896 ]]
+ [[-48.708527   -5.9796596 -11.78269   ... -48.76666   -48.93097
+   -48.514355 ]
+  [-62.88449   -14.503499  -14.61704   ... -62.936493  -63.230495
+   -62.91148  ]
+  [-62.03602   -14.430918  -14.046118  ... -62.153152  -62.34655
+   -62.026478 ]
+  ...
+  [-48.228634   -4.1367526 -10.654346  ... -48.03393   -48.44199
+   -47.975254 ]
+  [-47.98226    -4.2278285 -10.673131  ... -47.789577  -48.194416
+   -47.72849  ]
+  [-48.290962   -4.295184  -10.782571  ... -48.1042    -48.50576
+   -48.037735 ]]
+ ...
+ [[-46.40207    -3.8217154  -9.274372  ... -46.547882  -46.69192
+   -46.379837 ]
+  [-64.974724  -14.073367  -10.572895  ... -65.04226   -64.973274
+   -64.929115 ]
+  [-46.082222   -5.5623517  -7.2636023 ... -46.595047  -46.18259
+   -46.015343 ]
+  ...
+  [-46.516838   -3.2048173  -9.33727   ... -46.61814   -46.8172
+   -46.483906 ]
+  [-46.109665   -3.1386251  -9.279814  ... -46.21154   -46.414135
+   -46.072567 ]
+  [-46.420498   -3.1889644  -9.318708  ... -46.522636  -46.726357
+   -46.383316 ]]
+ [[-47.411087   -5.343995  -11.69982   ... -47.643883  -47.954338
+   -47.662537 ]
+  [-60.17109   -11.917526  -11.930433  ... -60.456398  -60.14074
+   -60.110134 ]
+  [-61.9653    -10.869203  -13.138913  ... -62.377304  -62.025265
+   -62.050903 ]
+  ...
+  [-48.922874   -4.5052843 -12.222808  ... -48.937042  -49.494133
+   -49.055954 ]
+  [-49.319782   -4.548425  -12.436798  ... -49.350758  -49.8958
+   -49.457825 ]
+  [-48.652874   -4.493947  -12.176091  ... -48.685104  -49.228275
+   -48.795418 ]]
+ [[-44.956863   -4.925339  -10.49741   ... -44.974915  -45.25409
+   -44.802555 ]
+  [-47.472366   -7.149149   -7.819134  ... -47.89225   -47.57154
+   -47.37737  ]
+  [-62.08714   -12.987097  -13.107632  ... -62.371338  -62.08146
+   -62.052406 ]
+  ...
+  [-43.704044   -3.4275393 -10.13796   ... -43.559074  -44.028908
+   -43.560917 ]
+  [-43.27961    -3.4248285 -10.125182  ... -43.13504   -43.607872
+   -43.136513 ]
+  [-43.56036    -3.4821763 -10.222598  ... -43.422256  -43.882484
+   -43.41903  ]]]

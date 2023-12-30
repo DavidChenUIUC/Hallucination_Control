@@ -1,0 +1,158 @@
+12/29/2023 20:03:31 - INFO - __main__ - ***** Running training *****
+12/29/2023 20:03:31 - INFO - __main__ -   Num examples = 14732
+12/29/2023 20:03:31 - INFO - __main__ -   Num Epochs = 5
+12/29/2023 20:03:31 - INFO - __main__ -   Instantaneous batch size per device = 4
+12/29/2023 20:03:31 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 16
+12/29/2023 20:03:31 - INFO - __main__ -   Gradient Accumulation steps = 4
+12/29/2023 20:03:31 - INFO - __main__ -   Total optimization steps = 4605
+
+  0%|                                                                                                                                             | 0/4605 [00:00<?, ?it/s]12/29/2023 20:03:33 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_0
+12/29/2023 20:03:39 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_0/model.safetensors
+12/29/2023 20:03:39 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_0/optimizer.bin
+12/29/2023 20:03:39 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_0/scheduler.bin
+12/29/2023 20:03:39 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_0/sampler.bin
+12/29/2023 20:03:39 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_0/sampler_1.bin
+12/29/2023 20:03:39 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_0/random_states_0.pkl
+12/29/2023 20:03:42 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_0
+12/29/2023 20:03:54 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_0/model.safetensors
+12/29/2023 20:03:54 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_0/optimizer.bin
+12/29/2023 20:03:54 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_0/scheduler.bin
+12/29/2023 20:03:54 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_0/sampler.bin
+12/29/2023 20:03:54 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_0/sampler_1.bin
+12/29/2023 20:03:54 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_0/random_states_0.pkl
+12/29/2023 20:03:58 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_0
+12/29/2023 20:04:10 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_0/model.safetensors
+12/29/2023 20:04:10 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_0/optimizer.bin
+12/29/2023 20:04:10 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_0/scheduler.bin
+12/29/2023 20:04:10 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_0/sampler.bin
+12/29/2023 20:04:10 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_0/sampler_1.bin
+12/29/2023 20:04:10 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_0/random_states_0.pkl
+  0%|                                                                                                                                  | 1/4605 [00:41<52:50:15, 41.32s/it]12/29/2023 20:04:12 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_1
+12/29/2023 20:04:19 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_1/model.safetensors
+12/29/2023 20:04:20 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_1/optimizer.bin
+12/29/2023 20:04:20 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_1/scheduler.bin
+12/29/2023 20:04:20 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_1/sampler.bin
+12/29/2023 20:04:20 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_1/sampler_1.bin
+12/29/2023 20:04:21 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_1/random_states_0.pkl
+12/29/2023 20:04:23 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_1
+Epoch: 0 | Step: 1 | Loss: 20.269161224365234
+12/29/2023 20:04:36 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_1/model.safetensors
+12/29/2023 20:04:39 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_1/optimizer.bin
+12/29/2023 20:04:39 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_1/scheduler.bin
+12/29/2023 20:04:39 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_1/sampler.bin
+12/29/2023 20:04:39 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_1/sampler_1.bin
+12/29/2023 20:04:39 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_1/random_states_0.pkl
+Epoch: 0 | Step: 1 | Loss: 21.46074676513672
+12/29/2023 20:04:42 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_1
+12/29/2023 20:04:51 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_1/model.safetensors
+12/29/2023 20:04:54 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_1/optimizer.bin
+12/29/2023 20:04:54 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_1/scheduler.bin
+12/29/2023 20:04:54 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_1/sampler.bin
+12/29/2023 20:04:54 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_1/sampler_1.bin
+12/29/2023 20:04:54 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_1/random_states_0.pkl
+12/29/2023 20:04:57 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_1
+Epoch: 0 | Step: 1 | Loss: 17.576292037963867
+12/29/2023 20:05:10 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_1/model.safetensors
+12/29/2023 20:05:12 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_1/optimizer.bin
+12/29/2023 20:05:12 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_1/scheduler.bin
+12/29/2023 20:05:12 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_1/sampler.bin
+12/29/2023 20:05:12 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_1/sampler_1.bin
+12/29/2023 20:05:12 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_1/random_states_0.pkl
+Epoch: 0 | Step: 1 | Loss: 18.761978149414062
+  0%|                                                                                                                                  | 2/4605 [01:44<68:58:10, 53.94s/it]12/29/2023 20:05:15 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_2
+12/29/2023 20:05:24 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_2/model.safetensors
+12/29/2023 20:05:26 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_2/optimizer.bin
+12/29/2023 20:05:26 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_2/scheduler.bin
+12/29/2023 20:05:26 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_2/sampler.bin
+12/29/2023 20:05:26 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_2/sampler_1.bin
+12/29/2023 20:05:26 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_2/random_states_0.pkl
+12/29/2023 20:05:29 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_2
+Epoch: 0 | Step: 2 | Loss: 20.802291870117188
+12/29/2023 20:05:43 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_2/model.safetensors
+12/29/2023 20:05:46 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_2/optimizer.bin
+12/29/2023 20:05:46 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_2/scheduler.bin
+12/29/2023 20:05:46 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_2/sampler.bin
+12/29/2023 20:05:46 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_2/sampler_1.bin
+12/29/2023 20:05:46 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_2/random_states_0.pkl
+Epoch: 0 | Step: 2 | Loss: 18.300424575805664
+12/29/2023 20:05:49 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_2
+12/29/2023 20:05:57 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_2/model.safetensors
+12/29/2023 20:06:00 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_2/optimizer.bin
+12/29/2023 20:06:00 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_2/scheduler.bin
+12/29/2023 20:06:00 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_2/sampler.bin
+12/29/2023 20:06:00 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_2/sampler_1.bin
+12/29/2023 20:06:00 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_2/random_states_0.pkl
+12/29/2023 20:06:03 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_2
+Epoch: 0 | Step: 2 | Loss: 17.173812866210938
+12/29/2023 20:06:17 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_2/model.safetensors
+12/29/2023 20:06:20 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_2/optimizer.bin
+12/29/2023 20:06:20 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_2/scheduler.bin
+12/29/2023 20:06:20 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_2/sampler.bin
+12/29/2023 20:06:20 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_2/sampler_1.bin
+12/29/2023 20:06:20 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_2/random_states_0.pkl
+Epoch: 0 | Step: 2 | Loss: 20.88654899597168
+  0%|                                                                                                                                  | 3/4605 [02:52<77:07:40, 60.33s/it]12/29/2023 20:06:23 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_3
+12/29/2023 20:06:29 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_3/model.safetensors
+12/29/2023 20:06:31 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_3/optimizer.bin
+12/29/2023 20:06:31 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_3/scheduler.bin
+12/29/2023 20:06:31 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_3/sampler.bin
+12/29/2023 20:06:31 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_3/sampler_1.bin
+12/29/2023 20:06:31 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_3/random_states_0.pkl
+Epoch: 0 | Step: 3 | Loss: 22.425579071044922
+12/29/2023 20:06:34 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_3
+12/29/2023 20:06:46 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_3/model.safetensors
+12/29/2023 20:06:49 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_3/optimizer.bin
+12/29/2023 20:06:49 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_3/scheduler.bin
+12/29/2023 20:06:49 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_3/sampler.bin
+12/29/2023 20:06:49 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_3/sampler_1.bin
+12/29/2023 20:06:50 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_3/random_states_0.pkl
+Epoch: 0 | Step: 3 | Loss: 20.572904586791992
+12/29/2023 20:06:52 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_3
+12/29/2023 20:07:07 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_3/model.safetensors
+12/29/2023 20:07:10 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_3/optimizer.bin
+12/29/2023 20:07:10 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_3/scheduler.bin
+12/29/2023 20:07:10 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_3/sampler.bin
+12/29/2023 20:07:10 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_3/sampler_1.bin
+12/29/2023 20:07:10 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_3/random_states_0.pkl
+12/29/2023 20:07:13 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_3
+Epoch: 0 | Step: 3 | Loss: 18.652328491210938
+12/29/2023 20:07:25 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_3/model.safetensors
+12/29/2023 20:07:28 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_3/optimizer.bin
+12/29/2023 20:07:28 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_3/scheduler.bin
+12/29/2023 20:07:28 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_3/sampler.bin
+12/29/2023 20:07:28 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_3/sampler_1.bin
+12/29/2023 20:07:29 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_3/random_states_0.pkl
+Epoch: 0 | Step: 3 | Loss: 16.308618545532227
+  0%|                                                                                                                                  | 4/4605 [04:00<81:04:22, 63.43s/it]12/29/2023 20:07:31 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_4
+12/29/2023 20:07:38 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_4/model.safetensors
+12/29/2023 20:07:40 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_4/optimizer.bin
+12/29/2023 20:07:40 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_4/scheduler.bin
+12/29/2023 20:07:40 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_4/sampler.bin
+12/29/2023 20:07:40 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_4/sampler_1.bin
+12/29/2023 20:07:40 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_4/random_states_0.pkl
+Epoch: 0 | Step: 4 | Loss: 17.522851943969727
+12/29/2023 20:07:42 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_4
+12/29/2023 20:07:56 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_4/model.safetensors
+12/29/2023 20:07:59 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_4/optimizer.bin
+12/29/2023 20:07:59 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_4/scheduler.bin
+12/29/2023 20:07:59 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_4/sampler.bin
+12/29/2023 20:07:59 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_4/sampler_1.bin
+12/29/2023 20:07:59 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_4/random_states_0.pkl
+Epoch: 0 | Step: 4 | Loss: 20.793373107910156
+12/29/2023 20:08:02 - INFO - accelerate.accelerator - Saving current state to exp_results/test/step_4
+12/29/2023 20:08:11 - INFO - accelerate.checkpointing - Model weights saved in exp_results/test/step_4/model.safetensors
+12/29/2023 20:08:14 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/test/step_4/optimizer.bin
+12/29/2023 20:08:14 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/test/step_4/scheduler.bin
+12/29/2023 20:08:14 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/test/step_4/sampler.bin
+12/29/2023 20:08:14 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/test/step_4/sampler_1.bin
+12/29/2023 20:08:14 - INFO - accelerate.checkpointing - Random states saved in exp_results/test/step_4/random_states_0.pkl
+Traceback (most recent call last):
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 924, in <module>
+    main()
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 747, in main
+    unwrapped_model.save_pretrained(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/peft/peft_model.py", line 246, in save_pretrained
+    safe_save_file(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/safetensors/torch.py", line 281, in save_file
+    serialize_file(_flatten(tensors), filename, metadata=metadata)
+KeyboardInterrupt

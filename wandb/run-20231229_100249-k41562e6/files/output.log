@@ -1,0 +1,74 @@
+12/29/2023 10:02:49 - INFO - __main__ - ***** Running training *****
+12/29/2023 10:02:49 - INFO - __main__ -   Num examples = 14732
+12/29/2023 10:02:49 - INFO - __main__ -   Num Epochs = 5
+12/29/2023 10:02:49 - INFO - __main__ -   Instantaneous batch size per device = 4
+12/29/2023 10:02:49 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 16
+12/29/2023 10:02:49 - INFO - __main__ -   Gradient Accumulation steps = 4
+12/29/2023 10:02:49 - INFO - __main__ -   Total optimization steps = 4605
+  0%|                                                                                                                                             | 0/4605 [00:00<?, ?it/s]12/29/2023 10:02:51 - INFO - accelerate.accelerator - Saving current state to exp_results/high_lr_linear_decay/step_0
+12/29/2023 10:03:03 - INFO - accelerate.checkpointing - Model weights saved in exp_results/high_lr_linear_decay/step_0/model.safetensors
+12/29/2023 10:03:03 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/high_lr_linear_decay/step_0/optimizer.bin
+12/29/2023 10:03:03 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/high_lr_linear_decay/step_0/scheduler.bin
+12/29/2023 10:03:03 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/high_lr_linear_decay/step_0/sampler.bin
+12/29/2023 10:03:03 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/high_lr_linear_decay/step_0/sampler_1.bin
+12/29/2023 10:03:03 - INFO - accelerate.checkpointing - Random states saved in exp_results/high_lr_linear_decay/step_0/random_states_0.pkl
+12/29/2023 10:03:04 - INFO - accelerate.accelerator - Saving current state to exp_results/high_lr_linear_decay/step_0
+12/29/2023 10:03:16 - INFO - accelerate.checkpointing - Model weights saved in exp_results/high_lr_linear_decay/step_0/model.safetensors
+12/29/2023 10:03:16 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/high_lr_linear_decay/step_0/optimizer.bin
+12/29/2023 10:03:16 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/high_lr_linear_decay/step_0/scheduler.bin
+12/29/2023 10:03:16 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/high_lr_linear_decay/step_0/sampler.bin
+12/29/2023 10:03:16 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/high_lr_linear_decay/step_0/sampler_1.bin
+12/29/2023 10:03:16 - INFO - accelerate.checkpointing - Random states saved in exp_results/high_lr_linear_decay/step_0/random_states_0.pkl
+12/29/2023 10:03:18 - INFO - accelerate.accelerator - Saving current state to exp_results/high_lr_linear_decay/step_0
+12/29/2023 10:03:30 - INFO - accelerate.checkpointing - Model weights saved in exp_results/high_lr_linear_decay/step_0/model.safetensors
+12/29/2023 10:03:30 - INFO - accelerate.checkpointing - Optimizer state saved in exp_results/high_lr_linear_decay/step_0/optimizer.bin
+12/29/2023 10:03:30 - INFO - accelerate.checkpointing - Scheduler state saved in exp_results/high_lr_linear_decay/step_0/scheduler.bin
+12/29/2023 10:03:30 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in exp_results/high_lr_linear_decay/step_0/sampler.bin
+12/29/2023 10:03:30 - INFO - accelerate.checkpointing - Sampler state for dataloader 1 saved in exp_results/high_lr_linear_decay/step_0/sampler_1.bin
+12/29/2023 10:03:30 - INFO - accelerate.checkpointing - Random states saved in exp_results/high_lr_linear_decay/step_0/random_states_0.pkl
+  0%|                                                                                                                                  | 1/4605 [00:41<53:30:11, 41.84s/it]
+Evaluating:   0%|                                                                                                                                  | 0/205 [00:00<?, ?it/s]
+Traceback (most recent call last):                                                                                                                 | 0/205 [00:00<?, ?it/s]
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 912, in <module>
+    main()
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 767, in main
+    generated_tokens = accelerator.unwrap_model(model).generate(**gen_kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/peft/peft_model.py", line 1130, in generate
+    outputs = self.base_model.generate(**kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/generation/utils.py", line 1764, in generate
+    return self.sample(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/generation/utils.py", line 2861, in sample
+    outputs = self(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py", line 1181, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py", line 1068, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py", line 810, in forward
+    hidden_states = self.mlp(hidden_states)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py", line 268, in forward
+    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/peft/tuners/lora/bnb.py", line 299, in forward
+    if active_adapter not in self.lora_A.keys():
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 496, in keys
+    @_copy_to_script_wrapper
+KeyboardInterrupt

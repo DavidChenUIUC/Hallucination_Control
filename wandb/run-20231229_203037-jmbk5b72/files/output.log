@@ -1,0 +1,82 @@
+12/29/2023 20:30:37 - INFO - __main__ - ***** Running training *****
+12/29/2023 20:30:37 - INFO - __main__ -   Num examples = 14732
+12/29/2023 20:30:37 - INFO - __main__ -   Num Epochs = 5
+12/29/2023 20:30:37 - INFO - __main__ -   Instantaneous batch size per device = 4
+12/29/2023 20:30:37 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 16
+12/29/2023 20:30:37 - INFO - __main__ -   Gradient Accumulation steps = 4
+12/29/2023 20:30:37 - INFO - __main__ -   Total optimization steps = 4605
+  0%|                                                                                                                                             | 0/4605 [00:00<?, ?it/s]12/29/2023 20:30:37 - INFO - accelerate.accelerator - Loading states from ./exp_results/test/step_0
+12/29/2023 20:30:38 - INFO - accelerate.checkpointing - All model weights loaded successfully
+12/29/2023 20:30:38 - INFO - accelerate.checkpointing - All optimizer states loaded successfully
+12/29/2023 20:30:38 - INFO - accelerate.checkpointing - All scheduler states loaded successfully
+12/29/2023 20:30:38 - INFO - accelerate.checkpointing - All dataloader sampler states loaded successfully
+12/29/2023 20:30:38 - INFO - accelerate.checkpointing - All random states loaded successfully
+12/29/2023 20:30:38 - INFO - accelerate.accelerator - Loading in 0 custom states
+  0%|                                                                                                                                             | 0/4605 [00:01<?, ?it/s]
+Evaluating: 0it [00:00, ?it/s]
+|- Resuming from checkpoint
+
+
+
+
+12/29/2023 20:32:29 - INFO - __main__ - epoch 0: accuracy: 0.5833333333333334
+12/29/2023 20:32:29 - INFO - absl - Using default tokenizer.
+12/29/2023 20:32:29 - INFO - __main__ - epoch 0: ROUGE scores: {'rouge1': 8.011032759233267, 'rouge2': 1.8236489225791273, 'rougeL': 6.454844134054485, 'rougeLsum': 6.224446617444423}
+Evaluating: 0it [00:00, ?it/s]
+|- Printing evaluation prediction
+["🙂 Your task is to write a summarization for the following dialogue: 'Hannah: Hey, do you have Betty's number? Amanda: Lemme check Amanda: Sorry, can't find it. Amanda: Ask Larry Amanda: He called her last time we were at the park together Hannah: I don't know him well Hannah: I'd rather you texted him Amanda: Just text him 🙂 Hannah: Urgh.. Alright Amanda: Bye bye' 🙂 The key idea of this task is that the chatbot is able to summarize the contents of a text conversation. The dialogue can be thought of as a conversation between two people, and the chatbot is asked to summarize the conversation. To do this, the chatbot will need to understand the contents of the conversation, and be able to generate a summary that captures the main points of the conversation. One way to approach this task is to use an existing conversation summarization tool such as Rasa NLU. Rasa NLU is a tool for building conversational", ' ', '    The first step is to convert the string to a list of strings. For this purpose, we need the string module which is imported with the following line:      import string   The following code will create a list of all letters of the alphabet (including space):      alphabet = string.ascii_lowercase + " "   The following code will create a list of strings from the dialogue:      dialogue = "Lenny: Babe, can you help me with something?\\nBob: Sure, what\'s up?\\nLenny: Which one should I pick?\\nBob: Send me photos\\nLenny:  <file_photo>\\nLenny:  <file_photo>\\nLenny:  <file_photo>\\nBob: I like the first ones best\\nLenny: But I already have purple trousers. Does it make sense to have two pairs?\\nBob: I have four black pairs :D :D\\nLenny: yeah, but shouldn\'t I pick a different color?\\nBob: what matters is what', ' Note: This task is similar to Task 7 in the [Natural Language Processing course](https://www.coursera.org/learn/natural-language-processing), which is part of the [Machine Learning course](https://www.coursera.org/specializations/machine-learning).  ## Solution  The solution will be posted soon.', '): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ): ', "2 guys? Joe: Lol', yeah Pete: Ok, I'll be there Joe: 4 guys? Pete: Yup Joe: I'm 5 guys Pete: Lol' Joe: 6 guys Pete: Yup Joe: 7 guys Pete: Ummmmm Joe: 8 guys Pete: Yup Joe: 9 guys Pete: Yup Joe: 10 guys Pete: Yup Joe: 11 guys Pete: Yup Joe: 12 guys Pete: Yup Joe: 13 guys Pete: Yup Joe: 14 guys Pete: Yup Joe: 15 guys Pete: Yup Joe: 16 guys Pete: Yup Joe: 17 guys Pete: Yup Joe: 1", "😆😆 Domigo: If you don't understand it you can check out my profile there and see some of my videos Domigo: Maybe that will help( ^^) Euodia: Thank youuuuuu Domigo: You can try it out and see how it goes 😁 Euodia: I will try it for sure 😀😀😀 Domigo: Thank you( ^^)(^.^) Euodia: I'm not really into sharing videos but I'll try it once in a while Domigo: It's not that much sharing videos but sharing funny memes and stuff like that( ^_^) Euodia: Oh okay Domigo: It's fun if you have an account there and can use it( ^.^) Euodia: Well I'll try it for sure Domigo: Just remember to take a break from it sometimes to focus on more important things 😁 Euodia: Thank youuuuuuuuuuuuuuuuuuuu", ' >  > [![](https://i.imgur.com/XyF96Ka.png)](https://www.youtube.com/watch?v=Vkx079D99t0)    ', '  ## Hint - It is not a single task. - It will have at least three sub tasks.  ## Submitting 1. Open a new pull request. 2. Title it: `summarization-dialogue-[1,2,3]`, where [1,2,3] is the number of your task. 3. Put your solution code under the `summarization` folder. 4. Run `yarn build` and make sure that all the files are compiled. 5. Run `yarn test` to make sure that the code is correct. 6. In the summary, please explain how you solved the task.  ## Grading 1. **100%**  if all the files are compiled and all the tests pass. 2. **90%**  if the code has no compilation error, but some of the tests fail. 3. **80%**  if the code has no compilation error, but some of the tests pass. 4. **70%**  if the code has some compilation error, but some of the tests pass. 5. **6', "Your task is to write a summarization for the following dialogue: 'Tim: I'm running late Gary: when will you be here? Tim: About twenty past. You go in and just make some small talk, try and delay the main presentation Gary: I'm on it.'  Your task is to write a summarization for the following dialogue: 'Tim: I'm running late Gary: when will you be here? Tim: About twenty past. You go in and just make some small talk, try and delay the main presentation Gary: I'm on it.'  # The following code is adapted from: # https://github.com/yotamr/PyTorch-NLP-Summarization-tutorial # https://github.com/yotamr/PyTorch-NLP-Summarization-tutorial # https://github.com/yotamr/PyTorch-NLP-Summarization-tutorial # https://github.com/yotamr/PyTorch-NLP-Summarization-tutorial #", "4pm it is Anna: cool, thanks Anna: I'll pick him up at 3pm from the international terminal Marcus: cool Anna: so if he is delayed you will be there at 4pm? Marcus: yes Anna: ok thanks Your task is to write a summarization for the following dialogue: 'Anna: is anyone going to pick Mark from the airport? Marcus: i could but when and where from? Anna: Sydney, Thursday at 3 Marcus: am or pm? :D Leslie: haha fortunately pm:D Marcus: hmm i have a meeting at 1. I don't think i can make it Leslie: well i guess it will take him some time after landing, reclaiming luggage etc Marcus: oh well ok then Leslie: great Anna: ok I'll call him and give him your number Marcus: ok Anna: ok done Marcus: ok' 4pm it is Anna: cool, thanks Marcus: ok Anna: ok done Marcus: ok' 4pm it is Anna: cool, thanks Marcus: ok' 4pm it is Anna: cool, thanks", "  # [Optional] Which subtask do you want to attempt? # # 1. Summarize # 2. Question Answering # # [Optional] Choose the model to use for your task.  You can view all available models at https://huggingface.co/models?filter=all. # # [Optional] Choose which dataset to use for training.  You can view all available datasets at https://huggingface.co/datasets?filter=all. # # [Optional] Choose the task you're working on.  You can view all available tasks at https://huggingface.co/tasks?filter=all. # # [Optional] Choose which tokenizer to use for your task.  You can view all available tokenizers at https://huggingface.co/tokenizers?filter=all.   # # 1. Summarize # # [Optional] Choose the model to use for your task.  You can view all available models at https://huggingface.co"]
+|- Printing evaluation ground truth
+Traceback (most recent call last):
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 945, in <module>
+    main()
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 799, in main
+    generated_tokens = accelerator.unwrap_model(model).generate(**gen_kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/peft/peft_model.py", line 1130, in generate
+    outputs = self.base_model.generate(**kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/generation/utils.py", line 1764, in generate
+    return self.sample(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/generation/utils.py", line 2861, in sample
+    outputs = self(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py", line 1181, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py", line 1068, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py", line 796, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py", line 388, in forward
+    value_states = self.v_proj(hidden_states)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/peft/tuners/lora/bnb.py", line 290, in forward
+    result = self.base_layer(x, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/bitsandbytes/nn/modules.py", line 256, in forward
+    out = bnb.matmul_4bit(x, self.weight.t(), bias=bias, quant_state=self.weight.quant_state)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py", line 577, in matmul_4bit
+    return MatMul4Bit.apply(A, B, out, bias, quant_state)
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/function.py", line 506, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/home/cwtang/.local/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py", line 516, in forward
+    output = torch.nn.functional.linear(A, F.dequantize_4bit(B, quant_state).to(A.dtype).t(), bias)
+KeyboardInterrupt

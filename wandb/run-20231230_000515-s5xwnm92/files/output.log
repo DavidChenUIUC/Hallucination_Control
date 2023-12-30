@@ -1,0 +1,49 @@
+Train dataset size: 14732
+Test dataset size: 819
+Max source length: 255
+Max target length: 50
+Keys of tokenized dataset: ['input_ids', 'attention_mask', 'labels']
+Map: 100%|███████████████████████████████████████████████████████████████████████████████████| 818/818 [00:00<00:00, 6424.22 examples/s]
+Saving the dataset (1/1 shards): 100%|█████████████████████████████████████████████████| 14732/14732 [00:00<00:00, 545173.30 examples/s]
+Saving the dataset (1/1 shards): 100%|█████████████████████████████████████████████████████| 819/819 [00:00<00:00, 241434.85 examples/s]
+
+
+
+
+Loading checkpoint shards:  92%|██████████████████████████████████████████████████████████████████      | 11/12 [00:09<00:00,  1.46it/s]
+Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████| 12/12 [00:09<00:00,  1.25it/s]
+/home/cwtang/.local/lib/python3.10/site-packages/peft/utils/other.py:143: FutureWarning: prepare_model_for_int8_training is deprecated and will be removed in a future version. Use prepare_model_for_kbit_training instead.
+  warnings.warn(
+  0%|                                                                                                          | 0/4605 [00:00<?, ?it/s]You're using a T5TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/home/cwtang/.local/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:322: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+
+
+
+
+
+
+
+
+
+  0%|▏                                                                                              | 10/4605 [01:13<9:08:22,  7.16s/it]
+
+
+  0%|▏                                                                                              | 12/4605 [01:27<9:08:20,  7.16s/it]Traceback (most recent call last):
+  File "/home/cwtang/david_dynamo/flan_t5.py", line 158, in <module>
+    trainer.train()
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/trainer.py", line 1537, in train
+    return inner_training_loop(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/utils/memory.py", line 136, in decorator
+    return function(batch_size, *args, **kwargs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/trainer.py", line 1854, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/trainer.py", line 2744, in training_step
+    self.accelerator.backward(loss)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/accelerator.py", line 1905, in backward
+    loss.backward(**kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

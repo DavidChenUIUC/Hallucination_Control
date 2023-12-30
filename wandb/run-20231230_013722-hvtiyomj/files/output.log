@@ -1,0 +1,27 @@
+Train dataset size: 14732
+Test dataset size: 819
+Max source length: 255
+Max target length: 50
+Keys of tokenized dataset: ['input_ids', 'attention_mask', 'labels']
+Saving the dataset (1/1 shards): 100%|█████████████████████████████████████████████████| 14732/14732 [00:00<00:00, 521650.01 examples/s]
+Saving the dataset (1/1 shards): 100%|█████████████████████████████████████████████████████| 819/819 [00:00<00:00, 241333.07 examples/s]
+
+Loading checkpoint shards:  42%|██████████████████████████████▍                                          | 5/12 [00:04<00:06,  1.14it/s]
+Traceback (most recent call last):
+  File "/home/cwtang/david_dynamo/flan_t5.py", line 99, in <module>
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_id, load_in_8bit=True, device_map="auto")
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 566, in from_pretrained
+    return model_class.from_pretrained(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 3706, in from_pretrained
+    ) = cls._load_pretrained_model(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4116, in _load_pretrained_model
+    new_error_msgs, offload_index, state_dict_index = _load_state_dict_into_meta_model(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 786, in _load_state_dict_into_meta_model
+    set_module_quantized_tensor_to_device(
+  File "/home/cwtang/.local/lib/python3.10/site-packages/transformers/integrations/bitsandbytes.py", line 96, in set_module_quantized_tensor_to_device
+    new_value = bnb.nn.Int8Params(new_value, requires_grad=False, **kwargs).to(device)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/bitsandbytes/nn/modules.py", line 342, in to
+    return self.cuda(device)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/bitsandbytes/nn/modules.py", line 305, in cuda
+    B = self.data.contiguous().half().cuda(device)
+KeyboardInterrupt

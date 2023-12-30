@@ -1,0 +1,1 @@
+{"Detailed Loss": NaN, "Learning Rate": 7.931297546597785e-05, "_timestamp": 1703855480.934429, "_runtime": 10696.058310985565, "_step": 7366, "accuracy": 0.5375, "rouge1": 27.15070742100105, "rouge2": 5.520132549355993, "rougeL": 16.96964394444112, "epoch": 0, "step": 921, "_wandb": {"runtime": 10697}}

@@ -1,0 +1,1 @@
+{"Detailed Loss": 8.83858585357666, "_timestamp": 1703841062.502416, "_runtime": 91.8195219039917, "_step": 4, "accuracy": 0.5, "rouge1": 52.50792450787625, "rouge2": 33.36453717628962, "rougeL": 37.29773706948826, "epoch": 1, "step": 0, "_wandb": {"runtime": 140}}

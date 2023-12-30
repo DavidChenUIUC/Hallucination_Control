@@ -1,0 +1,17 @@
+12/29/2023 20:13:40 - INFO - __main__ - ***** Running training *****
+12/29/2023 20:13:40 - INFO - __main__ -   Num examples = 14732
+12/29/2023 20:13:40 - INFO - __main__ -   Num Epochs = 5
+12/29/2023 20:13:40 - INFO - __main__ -   Instantaneous batch size per device = 4
+12/29/2023 20:13:40 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 16
+12/29/2023 20:13:40 - INFO - __main__ -   Gradient Accumulation steps = 4
+12/29/2023 20:13:40 - INFO - __main__ -   Total optimization steps = 4605
+  0%|                                                                                                                                             | 0/4605 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 928, in <module>
+    main()
+  File "/home/cwtang/david_dynamo/train_gsm8k_llama.py", line 688, in main
+    accelerator.load_state(path)
+  File "/home/cwtang/.local/lib/python3.10/site-packages/accelerate/accelerator.py", line 2790, in load_state
+    raise ValueError(f"Tried to find {input_dir} but folder does not exist")
+ValueError: Tried to find step_900 but folder does not exist
+|- Resuming from checkpoint
+Resumed from checkpoint: ./exp_results/with_prompt_low_lr_linear_decay_5e-6/step_900
