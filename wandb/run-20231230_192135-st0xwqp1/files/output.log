@@ -1,0 +1,20 @@
+Train dataset size: 14732
+Test dataset size: 819
+Map: 100%|██████████████████████████████████████████████████████████████████████████| 15551/15551 [00:01<00:00, 14021.19 examples/s]
+Max source length: 255
+Max target length: 50
+Map: 100%|██████████████████████████████████████████████████████████████████████████| 15551/15551 [00:00<00:00, 57996.94 examples/s]
+Map:  61%|██████████████████████████████████████████████▍                             | 9000/14732 [00:01<00:00, 7514.43 examples/s]
+Map: 100%|███████████████████████████████████████████████████████████████████████████| 14732/14732 [00:02<00:00, 7229.31 examples/s]
+Map: 100%|███████████████████████████████████████████████████████████████████████████████| 819/819 [00:00<00:00, 3973.67 examples/s]
+Map: 100%|███████████████████████████████████████████████████████████████████████████████| 818/818 [00:00<00:00, 7561.70 examples/s]
+Saving the dataset (1/1 shards): 100%|█████████████████████████████████████████████| 14732/14732 [00:00<00:00, 574442.54 examples/s]
+Saving the dataset (1/1 shards): 100%|█████████████████████████████████████████████████| 819/819 [00:00<00:00, 237429.84 examples/s]
+Traceback (most recent call last):
+  File "/home/cwtang/david_dynamo/flan_t5.py", line 253, in <module>
+    flat_t5 = FlatT5()
+  File "/home/cwtang/david_dynamo/flan_t5.py", line 95, in __init__
+    self.setup_trainer()
+  File "/home/cwtang/david_dynamo/flan_t5.py", line 208, in setup_trainer
+    pprint(self.training_args.to_dict()) ## pretty print training args
+TypeError: 'module' object is not callable

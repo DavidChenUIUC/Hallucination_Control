@@ -1,0 +1,220 @@
+{
+    "os": "Linux-5.14.0-362.13.1.el9_3.x86_64-x86_64-with-glibc2.35",
+    "python": "3.10.6",
+    "heartbeatAt": "2023-12-30T09:13:14.539638",
+    "startedAt": "2023-12-30T09:13:14.056497",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/cwtang/david_dynamo/flan_t5.py",
+    "codePathLocal": "flan_t5.py",
+    "codePath": "flan_t5.py",
+    "git": {
+        "remote": "https://github.com/DavidChenUIUC/Hallucination_Control.git",
+        "commit": "8c0b7a33f05e4062e143c4f0f557f0398e51e1d2"
+    },
+    "email": "teweiwc2@illinois.edu",
+    "root": "/home/cwtang/david_dynamo",
+    "host": "adbdc92b0502",
+    "username": "cwtang",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 16,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 3351.968531249999,
+        "min": 1500.0,
+        "max": 3000.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3447.043,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3446.003,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3605.77,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3442.16,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3441.96,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3439.176,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3437.904,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3436.695,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3435.072,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3434.846,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3433.55,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3433.311,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3432.472,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3432.044,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3429.748,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3428.613,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3428.09,
+            "min": 1500.0,
+            "max": 3000.0
+        },
+        {
+            "current": 3425.854,
+            "min": 1500.0,
+            "max": 3000.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 89407.005859375,
+            "used": 70182.5199432373
+        }
+    },
+    "gpu": "NVIDIA A40",
+    "gpu_count": 4,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA A40",
+            "memory_total": 48305799168
+        },
+        {
+            "name": "NVIDIA A40",
+            "memory_total": 48305799168
+        },
+        {
+            "name": "NVIDIA A40",
+            "memory_total": 48305799168
+        },
+        {
+            "name": "NVIDIA A40",
+            "memory_total": 48305799168
+        }
+    ],
+    "memory": {
+        "total": 251.05643463134766
+    }
+}
