@@ -149,3 +149,38 @@ You're using a T5TokenizerFast tokenizer. Please note that with a fast tokenizer
   warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [01:25<00:00,  3.13s/it]
+***** eval metrics *****
+  eval_gen_len            =       56.0
+  eval_loss               =       1.24
+  eval_rouge1             =    38.9859
+  eval_rouge2             =     23.023
+  eval_rougeL             =    36.8642
+  eval_rougeLsum          =    36.8616
+  eval_runtime            = 0:01:32.39
+  eval_samples_per_second =      8.864
+
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [01:28<00:00,  3.41s/it]

@@ -7,7 +7,7 @@ from datasets import load_dataset, load_from_disk
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 # Load peft config for pre-trained checkpoint etc. 
-peft_model_id = "./lora-flan-t5-xxl-1e-3_seed1001/checkpoint-500"
+peft_model_id = "./backup_ckpt/lora-flan-t5-xxl-1e-3_seed1234/checkpoint-2000"
 config = PeftConfig.from_pretrained(peft_model_id)
 
 # load base LLM model and tokenizer
@@ -54,10 +54,10 @@ test_dataset = load_from_disk("data/eval/").with_format("torch")
 predictions, references = [] , []
 
 print("|- Testing for entire test set")
-cnt=0
+# cnt=0
 for sample in tqdm(test_dataset):
-    cnt+=1
-    if cnt%10!=0: continue
+    # cnt+=1
+    # if cnt%10!=0: continue
     p,l = evaluate_peft_model(sample)
     predictions.append(p)
     references.append(l)

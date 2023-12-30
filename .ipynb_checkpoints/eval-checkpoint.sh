@@ -1,1 +1,11 @@
-echo $CUDA_VISIBLE_DEVICES; python train_gsm8k_llama.py     --model_name_or_path LoftQ/Llama-2-13b-hf-4bit-64rank    --output_dir exp_results/no_prompt_lr1e-4_decay0.1     --learning_rate 1e-4     --weight_decay 0.1     --lr_scheduler_type linear     --num_warmup_steps 100     --seed 202     --dataset_name samsum     --pad_to_max_length     --max_source_length 100     --max_target_length 100     --num_train_epochs 1    --per_device_train_batch_size 4     --per_device_eval_batch_size 4     --gradient_accumulation_steps 2     --with_tracking     --report_to wandb     --checkpointing_steps 100  --eval_freq 100 --eval_only True --resume_from_checkpoint exp_results/no_prompt_lr1e-4_decay0.1/step_800
+echo "|- Using CUDA: $CUDA_VISIBLE_DEVICES"
+
+for model in " ./backup_ckpt/results_lora-flan-t5-xxl-1e-3_linear_warm0.1_seed1234" " ./backup_ckpt/results_lora-flan-t5-xxl-5e-4_adamw_seed1234" " ./backup_ckpt/results_lr1e-3_seed1234"
+do
+    echo "|- Evaluating model $model"
+    python3 flan_t5.py --eval_only True --resume_from_checkpoint $model --metric bertscore
+done
+
+echo "|- Evaluating base model"
+python3 flan_t5.py --eval_only True --metric bertscore
+

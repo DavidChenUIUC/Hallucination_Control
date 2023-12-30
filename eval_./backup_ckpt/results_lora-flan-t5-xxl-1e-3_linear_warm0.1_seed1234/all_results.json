@@ -1,0 +1,14 @@
+{
+    "eval_f1": 0.8539,
+    "eval_gen_len": 56.0,
+    "eval_loss": 1.16015625,
+    "eval_precision": 0.8,
+    "eval_recall": 0.9199,
+    "eval_rouge1": 41.1023,
+    "eval_rouge2": 25.0043,
+    "eval_rougeL": 39.3875,
+    "eval_rougeLsum": 39.3872,
+    "eval_runtime": 91.0833,
+    "eval_samples_per_second": 8.992,
+    "eval_steps_per_second": 0.285
+}

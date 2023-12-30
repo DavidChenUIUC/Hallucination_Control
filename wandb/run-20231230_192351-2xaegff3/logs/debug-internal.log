@@ -67,3 +67,220 @@
 2023-12-30 19:24:23,513 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
 2023-12-30 19:24:24,224 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/config.yaml
 2023-12-30 19:24:24,224 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:24:26,224 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:24:29,029 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:24:30,226 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:24:34,227 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:24:34,302 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:24:36,387 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-30 19:24:36,387 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-30 19:24:36,388 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: stop_status
+2023-12-30 19:24:38,229 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:24:40,229 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:24:40,241 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:24:44,230 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:24:45,825 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:24:46,231 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:24:50,233 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:24:51,117 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:24:51,328 DEBUG   SystemMonitor:60753 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-12-30 19:24:51,329 DEBUG   SenderThread:60753 [sender.py:send():382] send: stats
+2023-12-30 19:24:51,387 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-30 19:24:51,387 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-30 19:24:51,388 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: stop_status
+2023-12-30 19:24:54,234 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:24:56,215 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:24:58,235 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:02,078 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:25:02,237 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:04,237 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:06,396 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-30 19:25:06,396 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-30 19:25:06,396 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: stop_status
+2023-12-30 19:25:07,514 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:25:08,238 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:12,239 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:12,901 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:25:14,240 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:18,184 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:25:18,241 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:21,329 DEBUG   SenderThread:60753 [sender.py:send():382] send: stats
+2023-12-30 19:25:21,440 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-30 19:25:21,441 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-30 19:25:21,441 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: stop_status
+2023-12-30 19:25:22,243 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:23,340 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:25:24,243 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:28,245 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:28,647 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:25:32,246 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:33,790 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:25:36,247 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:36,443 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-30 19:25:36,443 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-30 19:25:36,443 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: stop_status
+2023-12-30 19:25:39,322 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:25:40,249 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:42,249 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:44,250 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:45,076 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:25:46,129 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-30 19:25:46,131 DEBUG   SenderThread:60753 [sender.py:send():382] send: config
+2023-12-30 19:25:46,131 DEBUG   SenderThread:60753 [sender.py:send():382] send: metric
+2023-12-30 19:25:46,131 DEBUG   SenderThread:60753 [sender.py:send():382] send: telemetry
+2023-12-30 19:25:46,131 DEBUG   SenderThread:60753 [sender.py:send():382] send: metric
+2023-12-30 19:25:46,131 WARNING SenderThread:60753 [sender.py:send_metric():1343] Seen metric with glob (shouldn't happen)
+2023-12-30 19:25:46,131 DEBUG   SenderThread:60753 [sender.py:send():382] send: telemetry
+2023-12-30 19:25:46,131 DEBUG   SenderThread:60753 [sender.py:send():382] send: metric
+2023-12-30 19:25:46,131 DEBUG   SenderThread:60753 [sender.py:send():382] send: metric
+2023-12-30 19:25:46,131 DEBUG   SenderThread:60753 [sender.py:send():382] send: metric
+2023-12-30 19:25:46,132 DEBUG   SenderThread:60753 [sender.py:send():382] send: metric
+2023-12-30 19:25:46,132 DEBUG   SenderThread:60753 [sender.py:send():382] send: metric
+2023-12-30 19:25:46,132 DEBUG   SenderThread:60753 [sender.py:send():382] send: metric
+2023-12-30 19:25:46,132 DEBUG   SenderThread:60753 [sender.py:send():382] send: metric
+2023-12-30 19:25:46,132 DEBUG   SenderThread:60753 [sender.py:send():382] send: metric
+2023-12-30 19:25:46,132 DEBUG   SenderThread:60753 [sender.py:send():382] send: metric
+2023-12-30 19:25:46,132 DEBUG   SenderThread:60753 [sender.py:send():382] send: history
+2023-12-30 19:25:46,132 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: summary_record
+2023-12-30 19:25:46,132 INFO    SenderThread:60753 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-30 19:25:46,157 DEBUG   SenderThread:60753 [sender.py:send():382] send: exit
+2023-12-30 19:25:46,157 INFO    SenderThread:60753 [sender.py:send_exit():589] handling exit code: 0
+2023-12-30 19:25:46,157 INFO    SenderThread:60753 [sender.py:send_exit():591] handling runtime: 114
+2023-12-30 19:25:46,157 INFO    SenderThread:60753 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-30 19:25:46,157 INFO    SenderThread:60753 [sender.py:send_exit():597] send defer
+2023-12-30 19:25:46,157 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:46,157 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 0
+2023-12-30 19:25:46,157 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:46,157 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 0
+2023-12-30 19:25:46,158 INFO    SenderThread:60753 [sender.py:transition_state():617] send defer: 1
+2023-12-30 19:25:46,158 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:46,158 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 1
+2023-12-30 19:25:46,158 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:46,158 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 1
+2023-12-30 19:25:46,158 INFO    SenderThread:60753 [sender.py:transition_state():617] send defer: 2
+2023-12-30 19:25:46,158 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:46,158 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 2
+2023-12-30 19:25:46,158 INFO    HandlerThread:60753 [system_monitor.py:finish():203] Stopping system monitor
+2023-12-30 19:25:46,158 DEBUG   SystemMonitor:60753 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-12-30 19:25:46,158 DEBUG   SystemMonitor:60753 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-12-30 19:25:46,159 INFO    HandlerThread:60753 [interfaces.py:finish():202] Joined cpu monitor
+2023-12-30 19:25:46,159 INFO    HandlerThread:60753 [interfaces.py:finish():202] Joined disk monitor
+2023-12-30 19:25:46,250 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/wandb-summary.json
+2023-12-30 19:25:46,256 INFO    HandlerThread:60753 [interfaces.py:finish():202] Joined gpu monitor
+2023-12-30 19:25:46,256 INFO    HandlerThread:60753 [interfaces.py:finish():202] Joined memory monitor
+2023-12-30 19:25:46,256 INFO    HandlerThread:60753 [interfaces.py:finish():202] Joined network monitor
+2023-12-30 19:25:46,257 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:46,257 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 2
+2023-12-30 19:25:46,257 INFO    SenderThread:60753 [sender.py:transition_state():617] send defer: 3
+2023-12-30 19:25:46,257 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:46,257 DEBUG   SenderThread:60753 [sender.py:send():382] send: stats
+2023-12-30 19:25:46,257 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 3
+2023-12-30 19:25:46,257 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:46,257 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 3
+2023-12-30 19:25:46,257 INFO    SenderThread:60753 [sender.py:transition_state():617] send defer: 4
+2023-12-30 19:25:46,258 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:46,258 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 4
+2023-12-30 19:25:46,258 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:46,258 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 4
+2023-12-30 19:25:46,258 INFO    SenderThread:60753 [sender.py:transition_state():617] send defer: 5
+2023-12-30 19:25:46,258 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:46,258 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 5
+2023-12-30 19:25:46,258 DEBUG   SenderThread:60753 [sender.py:send():382] send: summary
+2023-12-30 19:25:46,259 INFO    SenderThread:60753 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-30 19:25:46,259 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:46,259 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 5
+2023-12-30 19:25:46,259 INFO    SenderThread:60753 [sender.py:transition_state():617] send defer: 6
+2023-12-30 19:25:46,259 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:46,259 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 6
+2023-12-30 19:25:46,259 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:46,259 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 6
+2023-12-30 19:25:46,262 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: status_report
+2023-12-30 19:25:46,347 INFO    SenderThread:60753 [sender.py:transition_state():617] send defer: 7
+2023-12-30 19:25:46,347 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:46,347 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 7
+2023-12-30 19:25:46,347 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:46,347 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 7
+2023-12-30 19:25:47,157 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-30 19:25:47,251 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/wandb-summary.json
+2023-12-30 19:25:47,251 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/config.yaml
+2023-12-30 19:25:47,452 INFO    SenderThread:60753 [sender.py:transition_state():617] send defer: 8
+2023-12-30 19:25:47,453 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: poll_exit
+2023-12-30 19:25:47,453 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:47,453 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 8
+2023-12-30 19:25:47,453 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:47,453 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 8
+2023-12-30 19:25:47,453 INFO    SenderThread:60753 [job_builder.py:build():298] Attempting to build job artifact
+2023-12-30 19:25:47,454 INFO    SenderThread:60753 [job_builder.py:_get_source_type():428] is repo sourced job
+2023-12-30 19:25:47,465 INFO    SenderThread:60753 [job_builder.py:build():404] adding wandb-job metadata file
+2023-12-30 19:25:47,484 INFO    SenderThread:60753 [sender.py:transition_state():617] send defer: 9
+2023-12-30 19:25:47,484 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:47,484 DEBUG   SenderThread:60753 [sender.py:send():382] send: artifact
+2023-12-30 19:25:47,485 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 9
+2023-12-30 19:25:47,808 INFO    SenderThread:60753 [sender.py:send_artifact():1470] sent artifact job-https___github.com_DavidChenUIUC_Hallucination_Control.git_flan_t5.py - {'id': 'QXJ0aWZhY3Q6Njc3NjYzNDk2', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyNjQzNDk0OQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6Njc3NjYzNDk2', 'versionIndex': 5}}}
+2023-12-30 19:25:47,808 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:47,808 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 9
+2023-12-30 19:25:47,808 INFO    SenderThread:60753 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-12-30 19:25:48,157 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-30 19:25:48,251 INFO    Thread-12 :60753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:48,252 INFO    SenderThread:60753 [dir_watcher.py:finish():388] scan: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files
+2023-12-30 19:25:48,252 INFO    SenderThread:60753 [dir_watcher.py:finish():402] scan save: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/config.yaml config.yaml
+2023-12-30 19:25:48,252 INFO    SenderThread:60753 [dir_watcher.py:finish():402] scan save: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/requirements.txt requirements.txt
+2023-12-30 19:25:48,252 INFO    SenderThread:60753 [dir_watcher.py:finish():402] scan save: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/wandb-metadata.json wandb-metadata.json
+2023-12-30 19:25:48,252 INFO    SenderThread:60753 [dir_watcher.py:finish():402] scan save: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log output.log
+2023-12-30 19:25:48,256 INFO    SenderThread:60753 [dir_watcher.py:finish():402] scan save: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/wandb-summary.json wandb-summary.json
+2023-12-30 19:25:48,259 INFO    SenderThread:60753 [sender.py:transition_state():617] send defer: 10
+2023-12-30 19:25:48,259 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: poll_exit
+2023-12-30 19:25:48,259 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:48,259 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 10
+2023-12-30 19:25:48,259 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:48,259 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 10
+2023-12-30 19:25:48,259 INFO    SenderThread:60753 [file_pusher.py:finish():175] shutting down file pusher
+2023-12-30 19:25:48,416 INFO    wandb-upload_1:60753 [upload_job.py:push():131] Uploaded file /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/requirements.txt
+2023-12-30 19:25:48,505 INFO    wandb-upload_0:60753 [upload_job.py:push():131] Uploaded file /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/config.yaml
+2023-12-30 19:25:48,593 INFO    wandb-upload_2:60753 [upload_job.py:push():131] Uploaded file /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/output.log
+2023-12-30 19:25:48,598 INFO    wandb-upload_3:60753 [upload_job.py:push():131] Uploaded file /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/files/wandb-summary.json
+2023-12-30 19:25:48,799 INFO    Thread-11 (_thread_body):60753 [sender.py:transition_state():617] send defer: 11
+2023-12-30 19:25:48,799 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:48,799 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 11
+2023-12-30 19:25:48,800 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:48,800 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 11
+2023-12-30 19:25:48,800 INFO    SenderThread:60753 [file_pusher.py:join():181] waiting for file pusher
+2023-12-30 19:25:48,800 INFO    SenderThread:60753 [sender.py:transition_state():617] send defer: 12
+2023-12-30 19:25:48,800 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:48,800 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 12
+2023-12-30 19:25:48,800 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:48,800 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 12
+2023-12-30 19:25:48,800 INFO    SenderThread:60753 [file_stream.py:finish():595] file stream finish called
+2023-12-30 19:25:49,034 INFO    SenderThread:60753 [file_stream.py:finish():599] file stream finish is done
+2023-12-30 19:25:49,034 INFO    SenderThread:60753 [sender.py:transition_state():617] send defer: 13
+2023-12-30 19:25:49,034 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:49,034 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 13
+2023-12-30 19:25:49,034 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:49,034 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 13
+2023-12-30 19:25:49,034 INFO    SenderThread:60753 [sender.py:transition_state():617] send defer: 14
+2023-12-30 19:25:49,034 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: defer
+2023-12-30 19:25:49,034 INFO    HandlerThread:60753 [handler.py:handle_request_defer():172] handle defer: 14
+2023-12-30 19:25:49,035 DEBUG   SenderThread:60753 [sender.py:send():382] send: final
+2023-12-30 19:25:49,035 DEBUG   SenderThread:60753 [sender.py:send():382] send: footer
+2023-12-30 19:25:49,035 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: defer
+2023-12-30 19:25:49,035 INFO    SenderThread:60753 [sender.py:send_request_defer():613] handle sender defer: 14
+2023-12-30 19:25:49,035 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-30 19:25:49,035 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: poll_exit
+2023-12-30 19:25:49,036 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-30 19:25:49,036 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: server_info
+2023-12-30 19:25:49,036 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: poll_exit
+2023-12-30 19:25:49,036 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: server_info
+2023-12-30 19:25:49,036 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: get_summary
+2023-12-30 19:25:49,038 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: sampled_history
+2023-12-30 19:25:49,039 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-30 19:25:49,039 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: job_info
+2023-12-30 19:25:49,084 DEBUG   SenderThread:60753 [sender.py:send_request():409] send_request: job_info
+2023-12-30 19:25:49,084 INFO    MainThread:60753 [wandb_run.py:_footer_history_summary_info():3837] rendering history
+2023-12-30 19:25:49,085 INFO    MainThread:60753 [wandb_run.py:_footer_history_summary_info():3869] rendering summary
+2023-12-30 19:25:49,086 INFO    MainThread:60753 [wandb_run.py:_footer_sync_info():3796] logging synced files
+2023-12-30 19:25:49,086 DEBUG   HandlerThread:60753 [handler.py:handle_request():146] handle_request: shutdown
+2023-12-30 19:25:49,086 INFO    HandlerThread:60753 [handler.py:finish():866] shutting down handler
+2023-12-30 19:25:50,039 INFO    WriterThread:60753 [datastore.py:close():294] close: /home/cwtang/david_dynamo/wandb/run-20231230_192351-2xaegff3/run-2xaegff3.wandb
+2023-12-30 19:25:50,084 INFO    SenderThread:60753 [sender.py:finish():1548] shutting down sender
+2023-12-30 19:25:50,085 INFO    SenderThread:60753 [file_pusher.py:finish():175] shutting down file pusher
+2023-12-30 19:25:50,085 INFO    SenderThread:60753 [file_pusher.py:join():181] waiting for file pusher
