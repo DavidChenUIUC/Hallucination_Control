@@ -1,0 +1,9 @@
+id,dialogue,predict_summary,hallucination_type,hallucination_level,confidence_score,org_summary,org_hallucination_type,org_hallucination_level,org_confidence_score,prediction,org_prediction,time_taken,gpt_model
+13730619,"Jack: Can you buy butter?
+Thomas: Sure
+Jack: Thanks. When are you coming home?
+Thomas: I'm on my way
+Jack: Ok, I'll wait with cooking until you come
+Thomas: What are you making?
+Jack: A mushroom soup.
+Thomas: Tasty!",Thomas is buying butter for Jack. Jack is making a meal.,NULL,0,1,"Thomas will buy butter. He is on his way home. Jack is making a mushroom soup, but will wait with cooking until Thomas comes.",NULL,0,1,False,False,4.5744,gpt-3.5-turbo-16k

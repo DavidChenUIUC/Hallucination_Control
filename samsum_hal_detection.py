@@ -44,7 +44,7 @@ class SamSum_Hallucination_Detection:
         np.random.seed(seed)
         random.seed(seed)
         
-        self.reducted_csv = 'sumsum_hal_reduction_results'
+        self.reducted_csv = 'sumsum_hal_reduction_results.csv'
 
     def get_tool_list(self):
         schema = HallucinationDetection.schema()
@@ -120,12 +120,15 @@ class SamSum_Hallucination_Detection:
             original_dialogue = self.dataset[str(document_id)]['dialogue']
             original_summary = self.dataset[str(document_id)]['summary']
             
-            print(original_dialogue)
-            print(original_summary)
+            # print(original_dialogue)
+            # print(original_summary)
 
             start = time.time()
+
+            ##################################
+            ## Validating generated summary ##
+            ##################################
             retry_limit =3
-            
             try:
                 arguments_dict = self.parse_resp(original_dialogue, summary)
                 ERROR = False
@@ -143,7 +146,10 @@ class SamSum_Hallucination_Detection:
                     retry_limit-=1
             if ERROR:
                 print("** ERROR ** error while communicating with GPT-3 API")
-
+            
+            ##################################
+            ## Validating ORIGINAL summary ##
+            ##################################
             retry_limit=3
             try:
                 org_arguments_dict = self.parse_resp(original_dialogue, original_summary)
@@ -161,6 +167,7 @@ class SamSum_Hallucination_Detection:
                     retry_limit-=1
             if ERROR:
                 print("** ERROR ** error at original_summary while communicating with GPT-3 API")
+                
             end = time.time()
 
             time_taken = end - start
@@ -186,9 +193,9 @@ class SamSum_Hallucination_Detection:
             }
                 
             # Append the result for this document to the list for the system.
-            self.result['id'] = result
+            self.result[document_id] = result
 
-            break
+            # break
             # cnt+=1
             # if cnt == 30:
             #     self.save_statistics_to_excel()

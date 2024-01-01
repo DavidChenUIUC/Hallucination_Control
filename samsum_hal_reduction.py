@@ -22,7 +22,7 @@ class SummaryEvaluator:
         self.RETRY_LIMIT = 3
         self.split = 'test'
         self.dataset = load_dataset("samsum")[self.split]
-        self.testing_num = 1
+        self.testing_num = 50
         self.rand_list = [randrange(len(self.dataset)) for i in range(self.testing_num)]
 
         self.set_seed(123)
@@ -108,7 +108,7 @@ class SummaryEvaluator:
             slm_answer = np.argmax(probs)
             if slm_answer == gpt_answers[i]:
                 correctness += 1 / len(questions)
-        return (correctness, questions, gpt_answers, gpt_qa_exec_time, (len(questions)==0))
+        return (correctness, questions, gpt_answers, gpt_qa_exec_time)
 
     def generate_summary(self, input_ids, labels):
         outputs = self.model.generate(input_ids=input_ids, max_length=50, do_sample=True, top_p=0.9).detach().cpu().numpy()
@@ -128,20 +128,32 @@ class SummaryEvaluator:
             labels = self.tokenizer(sample["summary"], return_tensors="pt", max_length=50, padding='max_length', truncation=True).input_ids.to(self.device)
 
             decoded_preds, decoded_labels = self.generate_summary(input_ids, labels)
+            
+            correctness, questions, gpt_answers, gpt_qa_exec_time = self.verify_summary(decoded_preds[0], decoded_labels[0])
 
-            correctness, questions, gpt_answers, gpt_qa_exec_time, no_questions = self.verify_summary(decoded_preds[0], decoded_labels[0])
+            try:
+                no_question = True if len(questions)==0 else False
+            except:
+                no_question = False
+            
+            # Generate summary until exceeds corectness threshold or meet retry limit
             retry = 1
             while no_questions or (correctness < self.THRESHOLD and retry <= self.RETRY_LIMIT):
                 print(f"** Retrying {retry} **")
                 retry += 1
                 decoded_preds, decoded_labels = self.generate_summary(input_ids, labels)
-                correctness, questions, gpt_answers, gpt_qa_exec_time, no_questions = self.verify_summary(decoded_preds[0], decoded_labels[0])
+                correctness, questions, gpt_answers, gpt_qa_exec_time = self.verify_summary(decoded_preds[0], decoded_labels[0])
+                try:
+                    no_question = True if len(questions)==0 else False
+                except:
+                    no_question = False
             
             if no_questions:
-                print("** No questions generated after retries **")
+                print("|- Failed to check correctness: No questions generated after retries")
+                
                 continue
             elif (correctness < self.THRESHOLD and retry < self.RETRY_LIMIT):
-                print("** Correctness below threshold after retries **")
+                print("|- Correctness below threshold after retries")
         
             if self.save_metrics:
                 metrics = self.get_metrics(decoded_preds, decoded_labels, input_ids, labels) # input_ids, labels are for generating additional samples for MQAG
@@ -160,7 +172,7 @@ class SummaryEvaluator:
                     print("|- Not adding current metric to result to due popped up error")
                     
             if self.save_summaries_only:
-                self.file_name = 'hal_reducted_summaries.csv'
+                self.file_name = 'sumsum_hal_reduction_results.csv'
                 self.overall_eval_results[sample_id] = {'id': sample_id, 'dialogue': sample["dialogue"], 'summary': decoded_preds[0]}
 
         self.save_results_to_csv()
@@ -175,7 +187,6 @@ class SummaryEvaluator:
 
             writer.writeheader()
             for sample_id, metrics in self.overall_eval_results.items():
-                row = {'id': sample_id}
                 for metric, values in metrics.items():
                     if isinstance(values, list) and isinstance(values[0], (int, float)):
                         row[metric] = np.mean(values) 
