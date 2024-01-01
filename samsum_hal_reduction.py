@@ -7,6 +7,7 @@ from datasets import load_dataset
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 import evaluate, csv
 from tqdm import tqdm
+import time, pickle
 from selfcheckgpt.modeling_mqag import MQAG
 from selfcheckgpt.modeling_selfcheck import SelfCheckNLI
 from collections import defaultdict
@@ -21,7 +22,7 @@ class SummaryEvaluator:
         self.RETRY_LIMIT = 3
         self.split = 'test'
         self.dataset = load_dataset("samsum")[self.split]
-        self.testing_num = 5
+        self.testing_num = 1
         self.rand_list = [randrange(len(self.dataset)) for i in range(self.testing_num)]
 
         self.set_seed(123)
@@ -33,7 +34,9 @@ class SummaryEvaluator:
         self.nli_threshold = 0.5397 
         self.num_nli_sample = 3
 
-        self.file_name='hal_reduction_eval_results.csv'
+        self.save_metrics = False
+        self.save_summaries_only = True
+        self.file_name='sumsum_hal_reduction_results.csv'
 
     def set_seed(self, seed_value):
         np.random.seed(seed_value)
@@ -65,12 +68,12 @@ class SummaryEvaluator:
         bertscore_result = self.bertscore.compute(predictions=decoded_preds, references=decoded_labels, lang="en")
         del bertscore_result['hashcode']
         for k, v_list in bertscore_result.items():
-            eval_results["BertScore " + k] = np.mean(v_list)
+            eval_results["BertScore " + k] = round(np.mean(v_list),4)
 
         # Rouge
         rouge_result = self.rouge.compute(predictions=decoded_preds, references=decoded_labels, use_stemmer=True, use_aggregator=True)
         for k, v in rouge_result.items():
-            eval_results["Rouge " + k] = v
+            eval_results["Rouge " + k] = round(v,4)
         
         # MQAG
         try:
@@ -80,7 +83,7 @@ class SummaryEvaluator:
             mqag_score =  {'kl_div': 0, 'counting': 0, 'hellinger': 0, 'total_variation': 0}
             # return None
         for k, v in mqag_score.items():
-            eval_results["MQAG " + k] = v
+            eval_results["MQAG " + k] = round(v,4)
 
         # SelfCheck-NLI
         self.nli_threshold = 0.5397 
@@ -92,7 +95,7 @@ class SummaryEvaluator:
             sampled_passages=nli_samples,  # list of sampled passages
         )
         num_nli_contr = sum(score < self.nli_threshold for score in sent_scores_nli)
-        nli_score = {"NLI Score": np.mean(sent_scores_nli), "NLI contradiction %": float(num_nli_contr / len(sent_scores_nli))}
+        nli_score = {"NLI Score": round(np.mean(sent_scores_nli),4), "NLI contradiction %": round(float(num_nli_contr / len(sent_scores_nli)),4)}
         eval_results.update(nli_score)
 
         return eval_results
@@ -112,53 +115,67 @@ class SummaryEvaluator:
         decoded_preds = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
         decoded_labels = self.tokenizer.batch_decode(labels, skip_special_tokens=True)
         return decoded_preds, decoded_labels
-
+    def load_model(self, filename):
+        with open(filename, 'rb') as file:
+            self.model = pickle.load(file)
+        print(f"Model loaded from {filename}")
     def evaluate_summaries(self):
         for i in tqdm(self.rand_list, desc="Evaluating"):
+            start = time.time()
             sample = self.dataset[i]
             sample_id = sample['id']
             input_ids = self.tokenizer(sample["dialogue"], return_tensors="pt", max_length=50, padding='max_length', truncation=True).input_ids.to(self.device)
             labels = self.tokenizer(sample["summary"], return_tensors="pt", max_length=50, padding='max_length', truncation=True).input_ids.to(self.device)
 
             decoded_preds, decoded_labels = self.generate_summary(input_ids, labels)
+
             correctness, questions, gpt_answers, gpt_qa_exec_time, no_questions = self.verify_summary(decoded_preds[0], decoded_labels[0])
             retry = 1
-            while no_questions or (correctness < self.THRESHOLD and retry < self.RETRY_LIMIT):
+            while no_questions or (correctness < self.THRESHOLD and retry <= self.RETRY_LIMIT):
                 print(f"** Retrying {retry} **")
                 retry += 1
                 decoded_preds, decoded_labels = self.generate_summary(input_ids, labels)
                 correctness, questions, gpt_answers, gpt_qa_exec_time, no_questions = self.verify_summary(decoded_preds[0], decoded_labels[0])
+            
             if no_questions:
                 print("** No questions generated after retries **")
                 continue
             elif (correctness < self.THRESHOLD and retry < self.RETRY_LIMIT):
                 print("** Correctness below threshold after retries **")
-            metrics = self.get_metrics(decoded_preds, decoded_labels, input_ids, labels) # input_ids, labels are for generating additional samples for MQAG
-            if metrics is not None:
-                metrics["sample_id"] = sample_id
-                metrics["correctness"] = correctness
-                metrics["num_questions"] = len(questions)
-                metrics["questions"] = questions
-                metrics["gpt_answers"] = gpt_answers
-                metrics["gpt_qa_exec_time"] = gpt_qa_exec_time
-                self.overall_eval_results[sample_id] = metrics
-            else:
-                print("|- Not adding current metric to result to due popped up error")
+        
+            if self.save_metrics:
+                metrics = self.get_metrics(decoded_preds, decoded_labels, input_ids, labels) # input_ids, labels are for generating additional samples for MQAG
+                end = time.time()
+                if metrics is not None:
+                    metrics["id"] = sample_id
+                    metrics["correctness"] = round(correctness,4)
+                    metrics["num_questions"] = len(questions)
+                    metrics["questions"] = questions
+                    metrics["gpt_answers"] = gpt_answers
+                    metrics["gpt_qa_exec_time"] = gpt_qa_exec_time
+                    metrics["overall_exec_time"] = round((end-start),4)
+                    metrics["tries"] = retry
+                    self.overall_eval_results[sample_id] = metrics
+                else:
+                    print("|- Not adding current metric to result to due popped up error")
+                    
+            if self.save_summaries_only:
+                self.file_name = 'hal_reducted_summaries.csv'
+                self.overall_eval_results[sample_id] = {'id': sample_id, 'dialogue': sample["dialogue"], 'summary': decoded_preds[0]}
 
         self.save_results_to_csv()
 
     def save_results_to_csv(self):
         # Add time to file name
-        cur_time = datetime.now().strftime("%Y%m%d-%H%M%S")
-        file_name = self.file_name.replace('.csv', f'_{cur_time}.csv')
-
-        with open(file_name, 'w', newline='') as csvfile:
-            fieldnames = ['sample_id'] + list(next(iter(self.overall_eval_results.values())).keys())
+        # cur_time = datetime.now().strftime("%Y%m%d-%H%M%S")
+        # self.file_name = self.file_name.replace('.csv', f'_{cur_time}.csv')
+        with open(self.file_name, 'w', newline='') as csvfile:
+            fieldnames = ['id'] + list(next(iter(self.overall_eval_results.values())).keys())
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
             writer.writeheader()
             for sample_id, metrics in self.overall_eval_results.items():
-                row = {'sample_id': sample_id}
+                row = {'id': sample_id}
                 for metric, values in metrics.items():
                     if isinstance(values, list) and isinstance(values[0], (int, float)):
                         row[metric] = np.mean(values) 
@@ -168,7 +185,7 @@ class SummaryEvaluator:
                         row[metric] = values
 
                 writer.writerow(row)
-        print("Finished writing to evaluation_results.csv")
+        print(f"Finished writing to {self.file_name}")
 
 if __name__ == "__main__":
     # Create an instance of the class and call the evaluation method

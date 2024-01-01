@@ -1,1 +1,0 @@
-sample_id,BertScore precision,BertScore recall,BertScore f1,Rouge rouge1,Rouge rouge2,Rouge rougeL,Rouge rougeLsum,MQAG kl_div,MQAG counting,MQAG hellinger,MQAG total_variation,NLI Score,NLI contradiction %,sample_id,correctness,num_questions,questions,gpt_answers,gpt_qa_exec_time

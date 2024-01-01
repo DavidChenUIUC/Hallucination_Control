@@ -1,0 +1,2 @@
+id,hallucination_type,hallucination_level,confidence_score,prediction,time_taken,gpt_model
+13865430,ERROR,-1,-1,True,2.7661,gpt-3.5-turbo-16k

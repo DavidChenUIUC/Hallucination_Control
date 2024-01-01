@@ -93,7 +93,8 @@ class XSum_Hallucination_Detection:
     def ask_gpt(self):
         # Load data from Excel
         df = pd.read_excel('./xsum-hal-system_statistics.xlsx', sheet_name=None, keep_default_na=False)
-        npy_path = "./xsum_none_hal.npy"
+
+        npy_path = "./xsum_none_hal.npy" ## The pre-saved none hallucination entities in xsum dataset
         if self.test_hal:
             id_system_arr = np.load(npy_path)
             id_system_set = set()

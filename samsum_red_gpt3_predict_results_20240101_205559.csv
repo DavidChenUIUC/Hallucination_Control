@@ -1,0 +1,9 @@
+id,dialogue,predict_summary,hallucination_type,hallucination_level,confidence_score,org_summary,org_hallucination_type,org_hallucination_level,org_confidence_score,prediction,org_prediction,time_taken,gpt_model
+13865430,"Ulysses: Did you see your grades?
+Peter: Yes. 
+Ulysses: I got an A
+Peter: Me too
+Julia: B
+Martha: Where can I check them?
+Julia: Online
+Julia: On the course page","Ulysses and Peter got A's, Julia got B. Martha wants to check her grades, too.",NULL,0,1,"Ulysses and Peter got an A, Julia got a B. The grades are to be checked on the course page.",NULL,0,1,False,False,4.1578,gpt-3.5-turbo-16k
