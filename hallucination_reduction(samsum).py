@@ -131,6 +131,8 @@ class SummaryEvaluator:
             if no_questions:
                 print("** No questions generated after retries **")
                 continue
+            elif (correctness < self.THRESHOLD and retry < self.RETRY_LIMIT):
+                print("** Correctness below threshold after retries **")
             metrics = self.get_metrics(decoded_preds, decoded_labels, input_ids, labels) # input_ids, labels are for generating additional samples for MQAG
             if metrics is not None:
                 metrics["sample_id"] = sample_id
