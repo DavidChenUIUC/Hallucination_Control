@@ -4,7 +4,7 @@
     "eval_loss": 1.2399942874908447,
     "eval_precision": 0.7903,
     "eval_recall": 0.9168,
-    "eval_runtime": 96.23,
-    "eval_samples_per_second": 8.511,
-    "eval_steps_per_second": 0.27
+    "eval_runtime": 95.5698,
+    "eval_samples_per_second": 8.57,
+    "eval_steps_per_second": 0.272
 }

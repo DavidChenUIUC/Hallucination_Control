@@ -1,0 +1,10 @@
+{
+    "eval_f1": 0.8539,
+    "eval_gen_len": 56.0,
+    "eval_loss": 1.16015625,
+    "eval_precision": 0.8,
+    "eval_recall": 0.9199,
+    "eval_runtime": 91.0879,
+    "eval_samples_per_second": 8.991,
+    "eval_steps_per_second": 0.285
+}

@@ -14,7 +14,7 @@ from peft import PeftModel, PeftConfig, LoraConfig, get_peft_model, prepare_mode
 from datetime import datetime
 
 import warnings
-warnings.filterwarnings('ignore') 
+warnings.filterwarnings('ignore')
 
 
 def parse_args():
@@ -94,6 +94,12 @@ def parse_args():
         help="Specify the metric for evaluation. Options: rouge, bertscore",
     )
     
+    parser.add_argument(
+        "--weight_decay",
+        type=float,
+        default="0.0",
+        help="Specify the weight decay param",
+    )
 
     args = parser.parse_args()
     return args
@@ -130,16 +136,18 @@ class FlatT5():
         self.tokenized_dataset = self.dataset.map(self.preprocess_function, batched=True, remove_columns=["dialogue", "summary", "id"])
         print(f"Keys of tokenized self.dataset: {list(self.tokenized_dataset['train'].features)}")
 
-        # Save datasets to disk for later easy loading
-        self.tokenized_dataset["train"].save_to_disk("data/train")
-        self.tokenized_dataset["test"].save_to_disk("data/eval")
+        # Check if path exists, save datasets to disk if not for later easy loading
+        if not os.path.exists("data/train"):
+            self.tokenized_dataset["train"].save_to_disk("data/train")
+        if not os.path.exists("data/eval"):
+            self.tokenized_dataset["test"].save_to_disk("data/eval")
 
         # Setup trainer
         if self.args.eval_only:
             if self.args.resume_from_checkpoint is None:
                 self.output_dir = 'eval_'+self.args.base_model
             else:
-                self.output_dir= 'eval_'+self.args.resume_from_checkpoint
+                self.output_dir= 'eval_'+self.args.resume_from_checkpoint.split("/")[-1]
         else:
             if self.args.storing_name is None and not self.args.resume_from_checkpoint:
                 self.output_dir= self.args.base_model.split("/")[-1]+"_lr_"+str(self.args.lr)+"_bs_"+str(self.args.bs)+"_warmup_"+str(self.args.warmup_ratio)+"_seed_"+str(self.args.seed)
@@ -147,6 +155,7 @@ class FlatT5():
                 self.output_dir= "resume_"+self.args.resume_from_checkpoint.split("/")[-1]+"_"+datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
             else:
                 self.output_dir=self.args.storing_name
+        print(f"|- Set the output dir to {self.output_dir}")
 
         if self.args.resume_from_checkpoint is not None:
             self.setup_resume_model()
@@ -292,20 +301,40 @@ class FlatT5():
         self.model = PeftModel.from_pretrained(model, peft_model_id, device_map={"":0})
     def setup_trainer(self):            
         # Define training args
+        # self.training_args = Seq2SeqTrainingArguments(
+        #     output_dir=self.output_dir,
+        #     auto_find_batch_size=True,
+        #     learning_rate=self.args.lr,  # Initial learning rate
+        #     num_train_epochs=5,  
+        #     per_device_train_batch_size=self.args.bs,  
+        #     per_device_eval_batch_size=self.args.bs,  
+        #     logging_dir=f"{self.output_dir}/logs",
+        #     logging_strategy="steps",
+        #     logging_steps=1,
+        #     save_strategy="epoch",
+        #     report_to="wandb",
+        #     lr_scheduler_type=self.args.lr_scheduler,
+        #     weight_decay=self.args.weight_decay,  # Include weight decay for regularization
+        #     warmup_ratio=self.args.warmup_ratio,  # Warmup for the first 10% of training
+        # )
+        print(f"|- Output dir: {self.output_dir}")
         self.training_args = Seq2SeqTrainingArguments(
-            output_dir=self.output_dir,
-            auto_find_batch_size=True,
-            learning_rate=self.args.lr,  # Initial learning rate
-            num_train_epochs=5,  
-            per_device_train_batch_size=self.args.bs,  
-            per_device_eval_batch_size=self.args.bs,  
-            logging_dir=f"{self.output_dir}/logs",
+            output_dir=self.output_dir,  # Replace with your actual output directory
+            learning_rate=1e-3,  # A moderate learning rate
+            num_train_epochs=5,
+            per_device_train_batch_size=32,
+            per_device_eval_batch_size=32,
+            optim='adafactor',  # Using Adafactor optimizer
+            weight_decay=0.01,  # A bit of weight decay for regularization
+            max_grad_norm=1.0,  # Keeping gradient clipping
+            lr_scheduler_type='constant',  # Constant learning rate since Adafactor adjusts learning rates internally
+            warmup_steps=0,  # No warmup steps necessary with Adafactor
+            logging_dir=f"{self.output_dir}/logs",  # Replace with your actual logging directory
             logging_strategy="steps",
             logging_steps=1,
             save_strategy="epoch",
             report_to="wandb",
-            lr_scheduler_type=self.args.lr_scheduler,  # Linear scheduler
-            warmup_ratio = self.args.warmup_ratio,  # Warmup for the first 10% of training
+            seed=1234,  # Replace with your chosen seed
         )
 
         # pprint(self.training_args.to_dict()) ## pretty print training args
@@ -355,11 +384,13 @@ class FlatT5():
         try:
             self.trainer.log_metrics("eval", metrics)
         except:
-            pass
+            print("|- Failed to show log")
+            
         try:
             self.trainer.save_metrics("eval", metrics)
+            print(f"|- Metrics are saved to {self.output_dir}")
         except:
-            pass
+            print("|- Failed to save metrics")
 
 if __name__ == "__main__":
     flat_t5 = FlatT5()
