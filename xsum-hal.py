@@ -157,139 +157,165 @@ class XSum_Hallucination:
         self.rouge = evaluate.load("rouge")
         self.mqag_model = MQAG(g1_model_type='race', device=self.device)
         self.selfcheck_nli = SelfCheckNLI(device=self.device)
-
-    def nli_evaluation(self):
-        """Perform NLI evaluation on the dataset."""
+        
+        self.storing_name = 'evaluation_results'
+    def import_and_evaluate(self, npy_path):
+        """Import the stored numpy array and evaluate using nli_evaluation."""
+        # Import the stored numpy array
+        id_system_arr = np.load(npy_path)
+        id_system_set = set()
+        for (bbcid, system) in id_system_arr:
+            id_system_set.add((bbcid, system))
+        print(f"NULL summaries set count: {len(id_system_set)}")
+        
+        # Initialize evaluation results dictionary
         eval_results = defaultdict(lambda: defaultdict(list))
-        ## Test on TranS2S
-        dataset = self.system_summaries["TranS2S"]
+
+        # Iterate through the imported tuples and perform nli_evaluation
+        cnt = 0
+        for bbcid, system in tqdm(id_system_set, total=len(id_system_set), desc='Evaluating'):
+            # Retrieve the corresponding sample from the combined_xsum using bbcid
+            sample = self.combined_xsum[bbcid]
+
+            # Since sample might have multiple entries, we iterate through them
+            for s in sample:
+                # Check if the system matches
+                if s['system'] == system:
+                    cnt+=1
+                    eval_results = self.nli_evaluation(s, eval_results, dataset=None)  # Assuming the 'dataset' parameter isn't used in nli_evaluation
+                    if cnt==10 or cnt%100==0:
+                        self.write_results_to_csv(eval_results)
+                    break  # Break after evaluating the matching entry
+        print(f"|- Runned on {cnt} data")
+        # Consider implementing CSV writing in a separate method for flexibility.
+        self.write_results_to_csv(eval_results)
+        
+    def nli_evaluation(self, sample, eval_results, dataset):
+        eval_results_copy = eval_results.copy()
+        """Perform NLI evaluation on the dataset."""
         FIRST_PRINT=False##
         # cnt = 0
-        for sample in tqdm(dataset.values(), desc="Evaluating"):
-            if FIRST_PRINT:
-                FIRST_PRINT=False
-                pprint(sample)
-            # cnt+=1
-            # if cnt == 3:
-            #     break
-            sample_id = sample['id']
-            hallucination_type = sample['hallucination_type']
-            # Prepare inputs and labels
-            max_length = 256  # Define a consistent max_length for both input and labels
-            
-            input_ids = self.tokenizer(sample["docs"], truncation=True, padding='longest', return_tensors="pt").input_ids.to(self.device)
-            labels = self.tokenizer(sample["machine_summary"], truncation=True, padding='longest', return_tensors="pt").input_ids.to(self.device)
-            
-            # Generate outputs using the model
-            outputs = self.model.generate(input_ids=input_ids, max_length=50, do_sample=True, top_p=0.9).detach().cpu().numpy()
+        sample_id = sample['id']
+        system = sample['system']
+        hallucination_type = sample['hallucination_type']
+        # Prepare inputs and labels
+        max_length = 256  # Define a consistent max_length for both input and labels
 
-            # Decode predictions and labels
-            decoded_preds = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
-            decoded_labels = self.tokenizer.batch_decode(labels, skip_special_tokens=True)
+        input_ids = self.tokenizer(sample["docs"], truncation=True, padding='longest', return_tensors="pt").input_ids.to(self.device)
+        labels = self.tokenizer(sample["machine_summary"], truncation=True, padding='longest', return_tensors="pt").input_ids.to(self.device)
 
-            # Print sample input, prediction, and gold summary
-            # print(f"input sentence: {sample['dialogue']}\n{'---'* 20}")
-            # print(f"Generated summary:\n{decoded_preds[0]}")
-            # print(f"Reference summary:\n{decoded_labels[0]}")
+        # Generate outputs using the model
+        outputs = self.model.generate(input_ids=input_ids, max_length=50, do_sample=True, top_p=0.9).detach().cpu().numpy()
 
-            # Metrics calculation
+        # Decode predictions and labels
+        decoded_preds = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
+        decoded_labels = self.tokenizer.batch_decode(labels, skip_special_tokens=True)
 
-            ################
-            ## BERT SCORE ##
-            ################
-            # print('---'* 20)
-            bertscore_result = self.bertscore.compute(predictions=decoded_preds, references=decoded_labels, lang="en")
-            del bertscore_result['hashcode']
-            tmp={}
-            for k, v_list in bertscore_result.items():
-                tmp["BertScore "+k] = np.mean(v_list)
-            bertscore_result = tmp
+        # Print sample input, prediction, and gold summary
+        # print(f"input sentence: {sample['dialogue']}\n{'---'* 20}")
+        # print(f"Generated summary:\n{decoded_preds[0]}")
+        # print(f"Reference summary:\n{decoded_labels[0]}")
 
-            ################
-            ##   rouge    ##
-            ################
-            # print('---'* 20)
-            rouge_result = self.rouge.compute(predictions=decoded_preds, references=decoded_labels, use_stemmer=True, use_aggregator=True)
+        # Metrics calculation
 
-            ################
-            ##    MQAG    ##
-            ################
-            # print('---'* 20)
-            # print(np.shape(decoded_preds[0]))
-            # print(decoded_preds)
-            # print(decoded_preds[0])
-            # print('-'*10)
-            # print(decoded_labels)
-            # print(decoded_labels[0])
+        ################
+        ## BERT SCORE ##
+        ################
+        # print('---'* 20)
+        bertscore_result = self.bertscore.compute(predictions=decoded_preds, references=decoded_labels, lang="en")
+        del bertscore_result['hashcode']
+        tmp={}
+        for k, v_list in bertscore_result.items():
+            tmp["BertScore "+k] = np.mean(v_list)
+        bertscore_result = tmp
+
+        ################
+        ##   rouge    ##
+        ################
+        # print('---'* 20)
+        rouge_result = self.rouge.compute(predictions=decoded_preds, references=decoded_labels, use_stemmer=True, use_aggregator=True)
+
+        ################
+        ##    MQAG    ##
+        ################
+        # print('---'* 20)
+        # print(np.shape(decoded_preds[0]))
+        # print(decoded_preds)
+        # print(decoded_preds[0])
+        # print('-'*10)
+        # print(decoded_labels)
+        # print(decoded_labels[0])
+        try:
+            mqag_score = self.mqag_model.score(candidate=decoded_preds[0], reference=decoded_labels[0], num_questions=3, verbose=False)
+        except:
+            print('retry')
             try:
                 mqag_score = self.mqag_model.score(candidate=decoded_preds[0], reference=decoded_labels[0], num_questions=3, verbose=False)
             except:
-                print('retry')
-                try:
-                    mqag_score = self.mqag_model.score(candidate=decoded_preds[0], reference=decoded_labels[0], num_questions=3, verbose=False)
-                except:
-                    continue
-            # print(score['total_variation'])
-            tmp={}
-            for k, v in mqag_score.items():
-                tmp["MQAG "+k] = v
-            mqag_score = tmp
+                print('error while running mqag')
+                return eval_results_copy
+                
+        # print(score['total_variation'])
+        tmp={}
+        for k, v in mqag_score.items():
+            tmp["MQAG "+k] = v
+        mqag_score = tmp
 
-            ###################
-            ## SelfCheck-NLI ##
-            ###################
-            # print('---'* 20)
-            # Generate outputs using the self.model
-            # sample
-            sample1 = self.model.generate(input_ids=input_ids, max_length=max_length, do_sample=True, top_p=0.9).detach().cpu().numpy()
-            sample2 = self.model.generate(input_ids=input_ids, max_length=max_length, do_sample=True, top_p=0.9).detach().cpu().numpy()
-            sample3 = self.model.generate(input_ids=input_ids, max_length=max_length, do_sample=True, top_p=0.9).detach().cpu().numpy()
+        ###################
+        ## SelfCheck-NLI ##
+        ###################
+        # print('---'* 20)
+        # Generate outputs using the self.model
+        # sample
+        sample1 = self.model.generate(input_ids=input_ids, max_length=max_length, do_sample=True, top_p=0.9).detach().cpu().numpy()
+        sample2 = self.model.generate(input_ids=input_ids, max_length=max_length, do_sample=True, top_p=0.9).detach().cpu().numpy()
+        sample3 = self.model.generate(input_ids=input_ids, max_length=max_length, do_sample=True, top_p=0.9).detach().cpu().numpy()
 
-            # Decode predictions and labels
-            sample1 = self.tokenizer.batch_decode(sample1, skip_special_tokens=True)[0]
-            sample2 = self.tokenizer.batch_decode(sample2, skip_special_tokens=True)[0]
-            sample3 = self.tokenizer.batch_decode(sample3, skip_special_tokens=True)[0]
+        # Decode predictions and labels
+        sample1 = self.tokenizer.batch_decode(sample1, skip_special_tokens=True)[0]
+        sample2 = self.tokenizer.batch_decode(sample2, skip_special_tokens=True)[0]
+        sample3 = self.tokenizer.batch_decode(sample3, skip_special_tokens=True)[0]
 
-            sent_scores_nli = self.selfcheck_nli.predict(
-                sentences = decoded_preds[0],                          # list of sentences
-                sampled_passages = [sample1, sample2, sample3], # list of sampled passages
-            )
-            # print(sent_scores_nli)
-            num_nli_contr = 0
-            nli_threshold = 0.5397 ## https://github.com/potsawee/selfcheckgpt/issues/17
-            for n in sent_scores_nli:
-                if n < nli_threshold:
-                    num_nli_contr+=1
-            nli_score = {"NLI Score": np.mean(sent_scores_nli), "NLI contradiction %": float(num_nli_contr/len(sent_scores_nli))}
+        sent_scores_nli = self.selfcheck_nli.predict(
+            sentences = decoded_preds[0],                          # list of sentences
+            sampled_passages = [sample1, sample2, sample3], # list of sampled passages
+        )
+        # print(sent_scores_nli)
+        num_nli_contr = 0
+        nli_threshold = 0.5397 ## https://github.com/potsawee/selfcheckgpt/issues/17
+        for n in sent_scores_nli:
+            if n < nli_threshold:
+                num_nli_contr+=1
+        nli_score = {"NLI Score": np.mean(sent_scores_nli), "NLI contradiction %": float(num_nli_contr/len(sent_scores_nli))}
 
-            # print('\n'+'---'* 20)
+        # print('\n'+'---'* 20)
 
-            # Aggregate results
-            for k, v in rouge_result.items():
-                eval_results[sample_id]["Rouge " + k].append(v)
-            for k, v in bertscore_result.items():
-                eval_results[sample_id][k].append(v)
-            for k, v in mqag_score.items():
-                eval_results[sample_id][k].append(v)
-            eval_results[sample_id]["NLI Score"].append(nli_score["NLI Score"])
-            eval_results[sample_id]["NLI contradiction %"].append(nli_score["NLI contradiction %"])
-            eval_results[sample_id]["hallucination_type"].append(hallucination_type[0])
+        # Aggregate results
+        for k, v in rouge_result.items():
+            eval_results[(sample_id, system)]["Rouge " + k].append(v)
+        for k, v in bertscore_result.items():
+            eval_results[(sample_id, system)][k].append(v)
+        for k, v in mqag_score.items():
+            eval_results[(sample_id, system)][k].append(v)
+        eval_results[(sample_id, system)]["NLI Score"].append(nli_score["NLI Score"])
+        eval_results[(sample_id, system)]["NLI contradiction %"].append(nli_score["NLI contradiction %"])
+        eval_results[(sample_id, system)]["hallucination_type"].append(hallucination_type[0])
 
-                # Consider implementing CSV writing in a separate method for flexibility.
-        self.write_results_to_csv(eval_results)
+        return eval_results
 
     def write_results_to_csv(self, eval_results):
         """Write the evaluation results to a CSV file."""
         current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
-        file_name = f'evaluation_results_{current_time}.csv'
+        file_name = f'{self.storing_name}_{current_time}.csv'
         with open(file_name, 'w', newline='') as csvfile:
             # Dynamically extract fieldnames from the collected eval_results
-            fieldnames = ['sample_id'] + list(next(iter(eval_results.values())).keys())
+            fieldnames = ['sample_id', 'system'] + list(next(iter(eval_results.values())).keys())
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
             writer.writeheader()
-            for sample_id, metrics in eval_results.items():
+            for (sample_id, system), metrics in eval_results.items():
                 row = {'sample_id': sample_id}
+                row['system'] = system 
                 for metric, values in metrics.items():
                     try:
                         row[metric] = np.mean(values)  # Or use another appropriate method of aggregation
@@ -300,4 +326,5 @@ class XSum_Hallucination:
 xsum_hal = XSum_Hallucination()
 # xsum_hal.print_statistic()
 # xsum_hal.save_statistics_to_excel()  # This will save the statistics to an Excel file.
-xsum_hal.nli_evaluation()
+# xsum_hal.nli_evaluation()
+xsum_hal.import_and_evaluate('./xsum_none_hal.npy')
