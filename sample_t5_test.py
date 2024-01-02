@@ -18,7 +18,9 @@ random.seed(seed_value)
 torch.manual_seed(seed_value)
 
 # Load peft config for pre-trained checkpoint etc.
-peft_model_id = "./backup_ckpt/lora-flan-t5-xxl-1e-3_seed1234/checkpoint-2000"
+# peft_model_id = "./backup_ckpt/lora-flan-t5-xxl-1e-3_seed1234/checkpoint-2000"
+# peft_model_id = "./backup_ckpt/results_lora-flan-t5-xxl-5e-4_adamw_seed1234"
+peft_model_id = "./philschmid/flan-t5-xxl-sharded-fp16"
 config = PeftConfig.from_pretrained(peft_model_id)
 
 # Load base LLM model and tokenizer
@@ -63,11 +65,14 @@ for i in tqdm(range(len(dataset["test"])), desc="Evaluating"):
     # Decode predictions and labels
     decoded_preds = tokenizer.batch_decode(outputs, skip_special_tokens=True)
     decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
+    
+
 
     # Print sample input, prediction, and gold summary
-    # print(f"input sentence: {sample['dialogue']}\n{'---'* 20}")
-    # print(f"Generated summary:\n{decoded_preds[0]}")
-    # print(f"Reference summary:\n{decoded_labels[0]}")
+    print(f"input sentence: {sample['dialogue']}\n{'---'* 20}")
+    print(f"Generated summary:\n{decoded_preds[0]}")
+    print(f"Reference summary:\n{decoded_labels[0]}")
+    continue
 
     # Metrics calculation
 
@@ -98,58 +103,58 @@ for i in tqdm(range(len(dataset["test"])), desc="Evaluating"):
     print('-'*10)
     print(decoded_labels)
     print(decoded_labels[0])
-    try:
-        mqag_score = mqag_model.score(candidate=decoded_preds[0], reference=decoded_labels[0], num_questions=3, verbose=False)
-    except:
-        print('retry')
-        try:
-            mqag_score = mqag_model.score(candidate=decoded_preds[0], reference=decoded_labels[0], num_questions=3, verbose=False)
-        except:
-            continue
-    # print(score['total_variation'])
-    tmp={}
-    for k, v in mqag_score.items():
-        tmp["MQAG "+k] = v
-    mqag_score = tmp
+    # try:
+    #     mqag_score = mqag_model.score(candidate=decoded_preds[0], reference=decoded_labels[0], num_questions=3, verbose=False)
+    # except:
+    #     print('retry')
+    #     try:
+    #         mqag_score = mqag_model.score(candidate=decoded_preds[0], reference=decoded_labels[0], num_questions=3, verbose=False)
+    #     except:
+    #         continue
+    # # print(score['total_variation'])
+    # tmp={}
+    # for k, v in mqag_score.items():
+    #     tmp["MQAG "+k] = v
+    # mqag_score = tmp
 
-    ###################
-    ## SelfCheck-NLI ##
-    ###################
-    # print('---'* 20)
-    # Generate outputs using the model
-    # sample
-    sample1 = model.generate(input_ids=input_ids, max_length=max_length, do_sample=True, top_p=0.9).detach().cpu().numpy()
-    sample2 = model.generate(input_ids=input_ids, max_length=max_length, do_sample=True, top_p=0.9).detach().cpu().numpy()
-    sample3 = model.generate(input_ids=input_ids, max_length=max_length, do_sample=True, top_p=0.9).detach().cpu().numpy()
+#     ###################
+#     ## SelfCheck-NLI ##
+#     ###################
+#     # print('---'* 20)
+#     # Generate outputs using the model
+#     # sample
+#     sample1 = model.generate(input_ids=input_ids, max_length=max_length, do_sample=True, top_p=0.9).detach().cpu().numpy()
+#     sample2 = model.generate(input_ids=input_ids, max_length=max_length, do_sample=True, top_p=0.9).detach().cpu().numpy()
+#     sample3 = model.generate(input_ids=input_ids, max_length=max_length, do_sample=True, top_p=0.9).detach().cpu().numpy()
 
-    # Decode predictions and labels
-    sample1 = tokenizer.batch_decode(sample1, skip_special_tokens=True)[0]
-    sample2 = tokenizer.batch_decode(sample2, skip_special_tokens=True)[0]
-    sample3 = tokenizer.batch_decode(sample3, skip_special_tokens=True)[0]
+#     # Decode predictions and labels
+#     sample1 = tokenizer.batch_decode(sample1, skip_special_tokens=True)[0]
+#     sample2 = tokenizer.batch_decode(sample2, skip_special_tokens=True)[0]
+#     sample3 = tokenizer.batch_decode(sample3, skip_special_tokens=True)[0]
 
-    sent_scores_nli = selfcheck_nli.predict(
-        sentences = decoded_preds[0],                          # list of sentences
-        sampled_passages = [sample1, sample2, sample3], # list of sampled passages
-    )
-    # print(sent_scores_nli)
-    num_nli_contr = 0
-    nli_threshold = 0.5397 ## https://github.com/potsawee/selfcheckgpt/issues/17
-    for n in sent_scores_nli:
-        if n < nli_threshold:
-            num_nli_contr+=1
-    nli_score = {"NLI Score": np.mean(sent_scores_nli), "NLI contradiction %": float(num_nli_contr/len(sent_scores_nli))}
+#     sent_scores_nli = selfcheck_nli.predict(
+#         sentences = decoded_preds[0],                          # list of sentences
+#         sampled_passages = [sample1, sample2, sample3], # list of sampled passages
+#     )
+#     # print(sent_scores_nli)
+#     num_nli_contr = 0
+#     nli_threshold = 0.5397 ## https://github.com/potsawee/selfcheckgpt/issues/17
+#     for n in sent_scores_nli:
+#         if n < nli_threshold:
+#             num_nli_contr+=1
+#     nli_score = {"NLI Score": np.mean(sent_scores_nli), "NLI contradiction %": float(num_nli_contr/len(sent_scores_nli))}
 
-    print('\n'+'---'* 20)
+#     print('\n'+'---'* 20)
 
     # Aggregate results
     for k, v in rouge_result.items():
         eval_results[sample_id]["Rouge " + k].append(v)
     for k, v in bertscore_result.items():
         eval_results[sample_id][k].append(v)
-    for k, v in mqag_score.items():
-        eval_results[sample_id][k].append(v)
-    eval_results[sample_id]["NLI Score"].append(nli_score["NLI Score"])
-    eval_results[sample_id]["NLI contradiction %"].append(nli_score["NLI contradiction %"])
+    # for k, v in mqag_score.items():
+    #     eval_results[sample_id][k].append(v)
+    # eval_results[sample_id]["NLI Score"].append(nli_score["NLI Score"])
+    # eval_results[sample_id]["NLI contradiction %"].append(nli_score["NLI contradiction %"])
 
 # Write results to a CSV file
 with open('evaluation_results.csv', 'w', newline='') as csvfile:

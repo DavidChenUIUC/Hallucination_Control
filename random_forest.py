@@ -19,7 +19,7 @@ class HallucinationPredictor:
         print("Data loaded successfully.")
     
     def preprocess_data(self):
-        data_clean = self.data.drop(columns=['sample_id', 'system','hallucination_level'])
+        data_clean = self.data.drop(columns=['sample_id', 'system','hallucination_level', 'MQAG counting', 'hallucination_type_extrinsic', 'hallucination_type_NULL','hallucination_type_intrinsic'])
         self.X = data_clean.drop(columns=['label'])  # features
         self.y = data_clean['label']  # target
         print("Data preprocessed successfully.")

@@ -1,0 +1,72 @@
+id,dialogue,first_shot_summary,first_shot_hallucination,final_summary,final_hallucination,time_taken,gpt_model
+13682496,"Myah: <file_photo>
+Selah: I can't see the phone number very well. Rewrite it plz
+Myah: <file_photo>
+Selah: The phone of that person is off",Selah wants Myah to rewrite the phone number of that person.,False,Selah wants Myah to rewrite the phone number of that person.,False,7.121,gpt-3.5-turbo-16k
+13681246,"Marvin: When's the last time you got laid ?
+Melany: I don't even remember..
+Marvin: Hmm so there must be lots of cobwebs between your legs now huh hahaha",Melany can't even remember when she had sex last time. ,False,Melany can't even remember when she had sex last time. ,False,7.5031,gpt-3.5-turbo-16k
+13819724,"Tom: we're few meters from you, can't you see us?
+Jeffrey: lol, nope
+Elena: c'mon, the red jacket!","Tom is looking for Jeffrey and Elena, who both can't see each other.",True,"Tom is looking for Jeffrey and Elena, who both can't see each other.",True,6.8227,gpt-3.5-turbo-16k
+13829029,"Marta: i swear that jay is a pathological liar!!!!!!
+Rose: why do you say that?
+Marta: he keeps talking about how he has all this money and travels all over the world
+Rose: lol yes, that's all he talks about
+Marta: well i just found out he lives in a studio apartment in the outskirts of town!!!!!!! :-(",Marta and Rose are shocked that Jay keeps talking about how he earns so much money and travels all over the world.,True,Marta and Rose are shocked that Jay keeps talking about how he earns so much money and travels all over the world.,True,7.8953,gpt-3.5-turbo-16k
+13680227,"Lindsey: Sup?
+Sage: Nothing just having a beer. You?
+Lindsey: I have just finished my class
+Sage: Cool
+Lindsey: I mean I should go for another class also
+Sage: Oh really
+Lindsey: But earlier I asked one girl to put my name on the attendance list instead of me :)
+Sage: Hahaha. Naughty naughty!
+Lindsey: Last week I did the same. I just hope that those signatures ( since last week I asked another girl) will be enough similar to mine. Because I gave them a piece of paper with my name written on it
+Sage: Good luck haha","Lindsey will go for another class soon, but right now she is having a beer. ",False,"Lindsey will go for another class soon, but right now she is having a beer. ",False,5.8161,gpt-3.5-turbo-16k
+13681603,"Ella: so? 
+Molly: ?
+Ella: come on! pics or it didn't happen
+Molly: what are you going on about?
+Ella: I heard you met up with Chuck
+Molly: no... when was this suppossed to happen?
+Ella: friday
+Molly: Holly fuck that little shit made a story up
+Ella: ?
+Molly: I told him no and the little fucker made up a story
+Molly: Im gonna kill him ",Ella wonders when Molly met up with Chuck.,True,Ella wonders when Molly met up with Chuck.,True,7.092,gpt-3.5-turbo-16k
+13730685,"Cole: hey roomie XD XD
+Luis: dude we are in the SAME DAMN ROOM
+Cole: its funny XD
+Luis: -_-
+Cole: pass me my pillow xD
+Luis: not until you say it to my face
+Cole: dude cmon 
+Luis: ...
+Cole: oh youre not gonna talk to your roommate now
+Luis: im not gonna text an idiot whos practically sitting just a few inches from me -_-
+Cole: xD",Cole and Luis are roommates sharing the same room.,False,Cole and Luis are roommates sharing the same room.,False,5.9807,gpt-3.5-turbo-16k
+13862536,"Robert: Hi mate! Are you still at your office? If you are how about grabbing some coffee? I'm meeting Darek at 5pm, but I will be around at 3pm already :)
+Gabriel: Hi Robert! Sorry for late response, didn't see your message. Also I've quit the office about a month ago, sorry. How are you doing?
+Robert: I casually came to visit my old pals. Long story. I thought I could catch you somewhere, but maybe next time then ;). How are you doing? Where are you nowadays?
+Gabriel: I'm OK. I'm at home, looking into what I'm doing next...Well I hope you will enjoy your meeting",Robert and Gabriel will meet at 3pm for a coffee and catch up.,False,Robert and Gabriel will meet at 3pm for a coffee and catch up.,True,6.7132,gpt-3.5-turbo-16k
+13819925,"Lisa: have you ever heard about this diet??
+Lisa: <file_other>
+Victoria: Nooo
+Victoria: Hmm, seems interesting
+Amelia: YES!! My mum was on that crazy diet..... She gained 5 pounds (ー_ー)!!
+Lisa: omg, glad that I asked
+Lisa: <file_gif> ",Amelia's mum was on this diet. She gained 5 pounds. ,False,Amelia's mum was on this diet. She gained 5 pounds. ,False,5.6787,gpt-3.5-turbo-16k
+13862663,"Colin: Hey I have some news that you would be really interested!(´･ω･`)
+Ava: What is it?
+Colin: How tall are you you said?
+Ava: 158...cm.. why?(-_-メ)
+Colin: Congratulations! You are defeated by penguin(☞ﾟヮﾟ)☞
+Ava: What are you talking about?
+Colin: Penguins' average  height is 162cm when they stand up （‐＾▽＾‐）オーホッホ
+Colin: So you are officially shorter than penguins☜(⌒▽⌒)☞",Ava is 158cm tall.,True,Ava is 158cm tall.,True,8.1853,gpt-3.5-turbo-16k
+13716653,"Jack: OMG STANLEY IS DEAD
+Oliver: Wtf?
+Stanley: I'm alive and well, dude
+Jack: I meant Stan Lee, damn autocorrect
+Stanley: I guessed that XD Yep, everybody's posting about it right now :(","Jack and Oliver thought Stanley Lee was dead, but it was Stanley Lee who sent the message.",True,"Jack and Oliver thought Stanley Lee was dead, but it was Stanley Lee who sent the message.",True,6.4838,gpt-3.5-turbo-16k

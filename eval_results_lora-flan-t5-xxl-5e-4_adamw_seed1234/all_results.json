@@ -4,7 +4,11 @@
     "eval_loss": 1.11328125,
     "eval_precision": 0.8266,
     "eval_recall": 0.9227,
-    "eval_runtime": 89.836,
-    "eval_samples_per_second": 9.117,
-    "eval_steps_per_second": 0.289
+    "eval_rouge1": 47.3542,
+    "eval_rouge2": 29.3487,
+    "eval_rougeL": 45.4851,
+    "eval_rougeLsum": 45.5116,
+    "eval_runtime": 86.6781,
+    "eval_samples_per_second": 9.449,
+    "eval_steps_per_second": 0.3
 }
