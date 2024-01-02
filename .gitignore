@@ -2,5 +2,6 @@
 *.bin
 *.pt
 *.pth
+*.csv
 *.ipynb_checkpoints*
 wandb/*
