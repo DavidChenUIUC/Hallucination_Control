@@ -174,11 +174,9 @@ class FlatT5():
         # Set the random seed for PyTorch on CPU
         torch.manual_seed(seed_value)
 
-        # If you are using PyTorch with CUDA (GPU), set the seed for all GPUs as well
         if torch.cuda.is_available():
             torch.cuda.manual_seed(seed_value)
             torch.cuda.manual_seed_all(seed_value)  # for multi-GPU.
-            # Additionally, you might want to ensure that the behavior is deterministic by
             # limiting certain aspects of CUDA functionality, like this:
             torch.backends.cudnn.deterministic = True
             torch.backends.cudnn.benchmark = False
@@ -313,29 +311,12 @@ class FlatT5():
             logging_steps=1,
             save_strategy="epoch",
             report_to="wandb",
+            do_eval=True,
+            evaluation_strategy='epoch',
             lr_scheduler_type=self.args.lr_scheduler,
             weight_decay=self.args.weight_decay,  # Include weight decay for regularization
             warmup_ratio=self.args.warmup_ratio,  # Warmup for the first 10% of training
         )
-        # print(f"|- Output dir: {self.output_dir}")
-        # self.training_args = Seq2SeqTrainingArguments(
-        #     output_dir=self.output_dir,  # Replace with your actual output directory
-        #     learning_rate=1e-3,  # A moderate learning rate
-        #     num_train_epochs=5,
-        #     per_device_train_batch_size=32,
-        #     per_device_eval_batch_size=32,
-        #     optim='adafactor',  # Using Adafactor optimizer
-        #     weight_decay=0.01,  # A bit of weight decay for regularization
-        #     max_grad_norm=1.0,  # Keeping gradient clipping
-        #     lr_scheduler_type='constant',  # Constant learning rate since Adafactor adjusts learning rates internally
-        #     warmup_steps=0,  # No warmup steps necessary with Adafactor
-        #     logging_dir=f"{self.output_dir}/logs",  # Replace with your actual logging directory
-        #     logging_strategy="steps",
-        #     logging_steps=1,
-        #     save_strategy="epoch",
-        #     report_to="wandb",
-        #     seed=1234,  # Replace with your chosen seed
-        # )
 
         # pprint(self.training_args.to_dict()) ## pretty print training args
 
