@@ -42,7 +42,7 @@ class SamSum_Hallucination_Detection:
         np.random.seed(seed)
         random.seed(seed)
         
-        self.reducted_csv = 'with_prefix_hal_reducted_samsum_hal_summaries_20240102-035357.csv'
+        self.reducted_csv = 'got_different_no_prefix_hal_reducted_samsum_hal_summaries_20240102-112403.csv'
 
     def get_tool_list(self):
         schema = HallucinationDetection.schema()

@@ -18,26 +18,29 @@ from qa_gpt import QA_GPT
 class SummaryEvaluator:
     def __init__(self):
         self.overall_eval_results = defaultdict(list)
-        self.THRESHOLD = 0.5
+        self.THRESHOLD = 0.75
         self.RETRY_LIMIT = 3
         self.split = 'test'
         
-        self.testing_num = 100
-        # self.rand_list = [randrange(len(self.dataset)) for i in range(self.testing_num)]
-        # self.dataset = load_dataset("samsum")[self.split]
+        self.testing_num = 20
         
-        dataset = load_dataset("samsum")[self.split]
-        self.dataset = defaultdict(lambda: defaultdict(str) )
-        for sample in dataset:
-            self.dataset[sample['id']] = sample
+        self.dataset = load_dataset("samsum")[self.split]
+        self.rand_list = [randrange(len(self.dataset)) for i in range(self.testing_num)]
 
-        self.rand_list = ['13682496', '13681246', '13819724', '13829029', '13680227', '13681603', '13730685', '13862536', '13819925', '13862663', '13716653']
+        # self.dataset = load_dataset("samsum")[self.split]
+        # dataset = load_dataset("samsum")[self.split]
+        # self.dataset = defaultdict(lambda: defaultdict(str) )
+        # for sample in dataset:
+        #     self.dataset[sample['id']] = sample
 
-        self.set_seed(123)
+        # self.rand_list = ['13682496']#, '13681246', '13819724', '13829029', '13680227', '13681603', '13730685', '13862536', '13819925', '13862663', '13716653']
+        # self.rand_list = ['13682496', '13681246', '13819724', '13829029', '13680227', '13681603', '13730685', '13862536', '13819925', '13862663', '13716653']
+
+        # self.set_seed(123)
         self.bertscore = evaluate.load("bertscore")
         self.rouge = evaluate.load("rouge")
         self.load_models_and_tokenizers()
-        self.qa_gpt = QA_GPT()
+        self.qa_gpt = QA_GPT(num_questions=5)
 
         self.nli_threshold = 0.5397 
         self.num_nli_sample = 3
@@ -53,8 +56,8 @@ class SummaryEvaluator:
 
     def load_models_and_tokenizers(self):
         # Load peft config for pre-trained checkpoint etc.
-        peft_model_id = "./backup_ckpt/lora-flan-t5-xxl-1e-3_seed1234/checkpoint-2000"
-        # peft_model_id = "./backup_ckpt/results_lora-flan-t5-xxl-5e-4_adamw_seed1234"
+        # peft_model_id = "./backup_ckpt/lora-flan-t5-xxl-1e-3_seed1234/checkpoint-2000"
+        peft_model_id = "./lora-flan-t5-xxl_adafactor_lr_1e-3_bs_32_weightdecay_0.01_maxgradnorm_1_seed_1234/checkpoint-2305"
 
         self.config = PeftConfig.from_pretrained(peft_model_id)
 
@@ -121,7 +124,7 @@ class SummaryEvaluator:
         return (correctness, questions, gpt_answers, gpt_qa_exec_time, (len(questions)==0))
 
     def generate_summary(self, input_ids, labels):
-        outputs = self.model.generate(input_ids=input_ids, max_length=50, do_sample=True, top_p=1.0).detach().cpu().numpy()
+        outputs = self.model.generate(input_ids=input_ids, max_length=50, do_sample=True, top_p=0.5,  temperature=2.0, num_beams=5,).detach().cpu().numpy()
         decoded_preds = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
         decoded_labels = self.tokenizer.batch_decode(labels, skip_special_tokens=True)
         return decoded_preds, decoded_labels
@@ -144,11 +147,15 @@ class SummaryEvaluator:
             decoded_preds, decoded_labels = self.generate_summary(input_ids, labels)
             first_shot_summary = decoded_preds[0]
             correctness, questions, gpt_answers, gpt_qa_exec_time, no_questions = self.verify_summary(decoded_preds[0], decoded_labels[0])
-            retry = 10
-            while no_questions or (correctness < self.THRESHOLD and retry <= self.RETRY_LIMIT):
+            retry = 0
+            print("correctness",correctness)
+            print("no_questions",no_questions)
+            print("retry",retry)
+            while no_questions or (correctness < self.THRESHOLD and retry< self.RETRY_LIMIT):
                 print(f"** Retrying {retry} **")
                 retry += 1
                 decoded_preds, decoded_labels = self.generate_summary(input_ids, labels)
+                print(decoded_preds[0])
                 correctness, questions, gpt_answers, gpt_qa_exec_time, no_questions = self.verify_summary(decoded_preds[0], decoded_labels[0])
             
             if no_questions:

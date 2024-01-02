@@ -19,7 +19,9 @@ warnings.filterwarnings("ignore")
 
 
 class HallucinationDetection(BaseModel):
-    hallucination: Literal['True', 'False']
+    hallucination_type: Literal['intrinsic', 'extrinsic', 'both', 'NULL']
+    hallucination_level: confloat(ge=0, le=1)
+    confidence_score: confloat(ge=0, le=1)
 
 class SamSum_Hallucination_Detection:
     def __init__(self):
@@ -42,7 +44,7 @@ class SamSum_Hallucination_Detection:
         np.random.seed(seed)
         random.seed(seed)
         
-        self.reducted_csv = 'no_prefix_hal_reducted_samsum_hal_summaries_20240102-092627.csv'
+        self.reducted_csv = 'with_prefix_hal_reducted_samsum_hal_summaries_20240102-035357.csv'
 
     def get_tool_list(self):
         schema = HallucinationDetection.schema()
@@ -51,7 +53,7 @@ class SamSum_Hallucination_Detection:
                 "type": "function",
                 "function": {
                     "name": "HallucinationDetection",
-                    "description": "Determine if there is hallucination in summarization",
+                    "description": "Detect the hallucination type, level and confidence of determining the hallucination in the summary of a document. ",
                     "parameters": schema
                 }
             }
@@ -77,22 +79,16 @@ class SamSum_Hallucination_Detection:
         return first_pair
 
     def parse_resp(self, document, summary, seed = None):
-        org_doc='''Joyce: Check this out! Joyce: <link> Michael: That's cheap! Edson: No way! I'm booking my ticket now!! '''
-        org_sum = '''Edson is booking his ticket now.'''
+        # print(f"Document: {document}")
+        # print(f"Summary: {summary}")
         messages = [
             {
                 "role": "system",
-                "content": f"Your task is to determine if there is any hallucinations in the given summarization with the given context.  Use function calling and only response in JSON with hallucination: Literal['True', 'False']"
+                "content": f"Your task is to determine if there is any hallucinations in the given summarization with the given context.  Do no make assumptions. Use function calling and only response in JSON with hallucination_type: Literal['intrinsic', 'extrinsic', 'both', 'NULL'] hallucination_level: confloat(ge=0, le=1), confidence_score: confloat(ge=0, le=1)"
 
             },{
                 "role": "user",
-                "content": f"Context: {org_doc}, Summary: {org_sum}. Based on the context, is there hallucination in the summary?"
-            },{
-                "role": "assistant",
-                 "content": "False"
-            },{
-                "role": "user",
-                "content": f"Context: {document}, Summary: {summary}. Based on the context, is there hallucination in the summary?"
+                "content": f"Context: {document}, Summary: {summary}. Is the summary supported by the context?"
                 # Poor: "content": f"Context: {document}, Summary: {summary}. Is the summary supported by the context? Let's work this out in a step by step way to be sure we have the right answer."
             }
         ]
@@ -113,6 +109,7 @@ class SamSum_Hallucination_Detection:
                 arguments_dict = self.parse_json_like_message(assistant_message)
                 # print(f'|- arguments_dict: {arguments_dict}')
             except json.JSONDecodeError as e:
+                
                 print("** error**")
                 raise e
 
@@ -143,91 +140,103 @@ class SamSum_Hallucination_Detection:
             return e
 
     def ask_gpt(self):
+        # Load data from Excel
         df = pd.read_csv(self.reducted_csv, keep_default_na=False)
 
+        # for _, row in tqdm(self.dataset.items(), desc = f"Evaluating", total=len(self.dataset)):
         for i, row in tqdm(df.iterrows(), desc = f"Evaluating", total=len(df)):
+            
             document_id = row['id']
+            # if str(document_id) !=  '13829899' and str(document_id) !=  '13612216':
+            #     continue
+            # else:
+            #     print('find', document_id)
+                
             document = row['dialogue']
-            first_shot_summary = row['first_shot_summary']
-            final_summary = row['final_summary']
+            summary = row['final_summary']
+            original_dialogue = row['dialogue']
+            original_summary = row['first_shot_summary']
+            
+            # original_summary = row['summary']
+            
+            # print(original_dialogue)
+            # print(original_summary)
 
-            first_shot_hal=None
-            final_hal=None
             start = time.time()
-            
-            ##################################
-            ##      first_shot_summary      ##
-            ##################################
-            retry_limit =3
-            first_shot_arguments_dict = self.parse_resp(document, first_shot_summary)
-            try:
-                first_shot_arguments_dict = self.parse_resp(document, first_shot_summary)
-                first_shot_hal= first_shot_arguments_dict['hallucination']
-                ERROR = False
-            except:
-                ERROR = True
-                
-            while ERROR and retry_limit >0:
-                try:
-                    first_shot_arguments_dict = self.parse_resp(document, first_shot_summary, seed = [1,2,3,4,5][retry_limit])
-                    print(first_shot_arguments_dict)
-                    first_shot_hal= first_shot_arguments_dict['hallucination']
-                    ERROR = False
-                except:
-                    print("|- retrying")
-                    first_shot_arguments_dict = {'hallucination': 'ERROR'}
-                    first_shot_hal='ERROR'
-                    retry_limit-=1
-                    
-            if ERROR: print("** ERROR ** error while communicating with GPT-3 API")
-            
-            ##################################
-            ##         final_summary        ##
-            ##################################
-            retry_limit =3
-            final_arguments_dict = self.parse_resp(document, final_summary)
-            try:
-                final_arguments_dict = self.parse_resp(document, final_summary)
-                final_hal= final_arguments_dict['hallucination']
-                ERROR = False
-            except:
-                ERROR = True
-                
-            while ERROR and retry_limit >0:
-                try:
-                    final_arguments_dict = self.parse_resp(document, final_summary, seed = [1,2,3,4,5][retry_limit])
-                    print(final_arguments_dict)
-                    final_hal= final_arguments_dict['hallucination']
-                    ERROR = False
-                except:
-                    print("|- retrying")
-                    final_arguments_dict = {'hallucination': 'ERROR'}
-                    final_hal='ERROR'
-                    retry_limit-=1
-                    
-            if ERROR: print("** ERROR ** error while communicating with GPT-3 API")
 
+            ##################################
+            ## Validating generated summary ##
+            ##################################
             
+            # arguments_dict = {'hallucination_type': 'ERROR', 'hallucination_level': -1, 'confidence_score': -1}
+
+            retry_limit =3
+            try:
+                arguments_dict = self.parse_resp(original_dialogue, summary)
+                ERROR = False
+            except:
+                ERROR = True
+                
+            while ERROR and retry_limit >0:
+                try:
+                    arguments_dict = self.parse_resp(original_dialogue, summary, seed = random.randint(0, 1000000))
+                    print(arguments_dict)
+                    ERROR = False
+                except:
+                    print("|- retrying")
+                    arguments_dict = {'hallucination_type': 'ERROR', 'hallucination_level': -1, 'confidence_score': -1}
+                    retry_limit-=1
+            if ERROR:
+                print("** ERROR ** error while communicating with GPT-3 API")
+            
+            ##################################
+            ## Validating ORIGINAL summary ##
+            ##################################
+            retry_limit=3
+            try:
+                org_arguments_dict = self.parse_resp(original_dialogue, original_summary)
+                ERROR = False
+            except:
+                ERROR = True
+                
+            while ERROR and retry_limit >0:
+                try:
+                    org_arguments_dict = self.parse_resp(original_dialogue, original_summary, seed = random.randint(0, 1000000))
+                    ERROR = False
+                except:
+                    print("|- retrying")
+                    org_arguments_dict = {'hallucination_type': 'ERROR', 'hallucination_level': -1, 'confidence_score': -1}
+                    retry_limit-=1
+            if ERROR:
+                print("** ERROR ** error at original_summary while communicating with GPT-3 API")
+                
             end = time.time()
+
             time_taken = end - start
             
             result = {
                 'id': document_id,
-                'dialogue': document, 
-                
-                'first_shot_summary': first_shot_summary,
-                'first_shot_hallucination': first_shot_hal,
+                'dialogue': original_dialogue, 
+                'summary': summary,
+                'hallucination_type': arguments_dict['hallucination_type'],
+                'hallucination_level': arguments_dict['hallucination_level'],
+                'confidence_score': arguments_dict['confidence_score'],
 
-                'final_summary': final_summary,
-                'final_hallucination':final_hal,
-                
+                'org_summary': original_summary,
+                'org_hallucination_type': org_arguments_dict['hallucination_type'],
+                'org_hallucination_level': org_arguments_dict['hallucination_level'],
+                'org_confidence_score': org_arguments_dict['confidence_score'],
+
+                'prediction': True if arguments_dict['hallucination_type'] != 'NULL' else False,
+                'org_prediction': True if org_arguments_dict['hallucination_type'] != 'NULL' else False,
+
                 'time_taken': round(time_taken, 4),
                 'gpt_model': self.GPT_MODEL
             }
                 
             # Append the result for this document to the list for the system.
             self.result[document_id] = result
-            # print(result)
+
             # break
             # cnt+=1
             # if cnt == 30:
@@ -236,7 +245,7 @@ class SamSum_Hallucination_Detection:
         # Save the result to excel
         self.save_statistics_to_excel()
         
-    def save_statistics_to_excel(self, file_name='no_prompt_samsum_reducted_hal_gpt3_predict_results.csv'):
+    def save_statistics_to_excel(self, file_name='with_prompt_samsum_reducted_hal_gpt3_predict_results.csv'):
         current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
         file_name = file_name.replace('.csv', f'_{current_time}.csv')
         
@@ -244,7 +253,26 @@ class SamSum_Hallucination_Detection:
         rows = []
         for result in self.result.values():
             # print(result)
-            rows.append(result)
+            rows.append({
+                'id': result['id'],
+                'dialogue': result['dialogue'],
+                
+                # 'predict_summary': result['summary'],
+                'hallucination_type': result['hallucination_type'],
+                'hallucination_level': result['hallucination_level'],
+                'confidence_score': result['confidence_score'],
+
+                'first_shot_summary': result['org_summary'],
+                'first_shot_hallucination_type': result['org_hallucination_type'],
+                'first_shot_hallucination_level': result['org_hallucination_level'],
+                'first_shot_confidence_score': result['org_confidence_score'],
+                
+                'prediction': result['prediction'],
+                'org_prediction': result['org_prediction'],
+                
+                'time_taken': result['time_taken'],
+                'gpt_model': result['gpt_model']
+            })
         
         # Convert the list of dictionaries to a Pandas DataFrame
         df = pd.DataFrame(rows)

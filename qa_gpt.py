@@ -105,7 +105,7 @@ class QA_GPT:
        
     def qa(self, document, summary):
         start = time.time()
-        question_items = self.mqag_model.generate(context=summary, do_sample=True, num_questions=self.num_questions)
+        question_items = self.mqag_model.generate(context=summary, do_sample=True,num_questions=self.num_questions)
         questions = []
         answers = []
         options = [] # 2D list
