@@ -1,4 +1,4 @@
-import json, time, openai
+import json, time, openai, os
 import requests
 import numpy as np
 from openpyxl import Workbook
@@ -123,7 +123,7 @@ class SamSum_Hallucination_Detection:
     def chat_completion_request(self, messages, tools=None, tool_choice='auto', seed=None):
         headers = {
             "Content-Type": "application/json",
-            "Authorization": "Bearer " + "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",
+            "Authorization": "Bearer " + os.environ["OPENAI_API_KEY"],
         }
         json_data = {"model": self.GPT_MODEL, "messages": messages, "seed": 123, "temperature": 0.2 } #,  "response_format": {"type": "json_object"}}
         if tools is not None:
