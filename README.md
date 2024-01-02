@@ -1,4 +1,4 @@
-## Hallucination Detection and reduction
+## Hallucination Detection and Reduction
 
 Presentation Slides: [[link]](https://drive.google.com/file/d/159BeKL2M6bOtvD6ZTDe18MxipKpm27hv/view?usp=sharing)
 
